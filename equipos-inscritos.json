@@ -1,0 +1,33 @@
+{
+  "torneo": "78 Copa San Pedro 2026",
+  "participantes": {
+    "capital": [
+      "INTER LEUKA-DUAL LINK",
+      "SCD SAN BLAS",
+      "ACFC ACADEMY",
+      "SALESIANOS BY DICKENS",
+      "CD CAMPELLO- CASA SALVI",
+      "CF BARRIO SAN GABRIEL",
+      "CD VILLAFRANQUEZA",
+      "BETIS FLORIDA",
+      "CLUB ATLÉTICO EL PRINCIPIO",
+      "VIASPORT MARISTAS",
+      "LACROSS BABEL",
+      "PLAYAS ALICANTE",
+      "MEDITERRÁNEO-PEÑA EL BOTIJO",
+      "ALICANTE SPORT ACADEMY",
+      "ATLETICO SAN BLAS",
+      "PENDIENTE/VACANTE"
+    ],
+    "provincia": [
+      "JOVE ESPAÑOL SANT VICENT",
+      "GIMNÀSTIC SANT VICENT",
+      "MONNEGRE MUCHAMIEL",
+      "MUTXAMEL CF",
+      "ATH TORRELANO",
+      "VILLAJOYOSA",
+      "FUNDACIÓN CD CAMPELLO",
+      "ALTET-REBOLLEDO"
+    ]
+  }
+}

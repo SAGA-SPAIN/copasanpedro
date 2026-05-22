@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>78ª Copa San Pedro 2026 - Gestor de Competición</title>
+    <!-- Google Fonts: Bebas Neue, Montserrat, Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <img src="https://www.copasanpedro.es/wp-content/uploads/2026/03/logocopasp.png" alt="Copa San Pedro Logo" class="brand-logo-img">
+                <span class="edition-badge">78ª EDICIÓN</span>
+                <div class="logo-text">
+                    <h1>COPA SAN PEDRO</h1>
+                    <span class="year">ALICANTE 2026</span>
+                </div>
+            </div>
+            
+            <nav class="app-nav">
+                <button class="nav-btn active" data-tab="dashboard" id="nav-dashboard">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-btn" data-tab="presentation" id="nav-presentation">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg>
+                    <span>Presentación</span>
+                </button>
+                <button class="nav-btn" data-tab="groups" id="nav-groups">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    <span>Grupos</span>
+                </button>
+                <button class="nav-btn" data-tab="calendar" id="nav-calendar">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                    <span>Calendario</span>
+                </button>
+                <button class="nav-btn" data-tab="playoffs" id="nav-playoffs">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M19 15v4H5v-4h14m1-2H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zM7 5v4H5V5h2m1-2H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h4c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zm11 2v4h-2V5h2m1-2h-4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h4c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1z"/></svg>
+                    <span>Eliminatorias</span>
+                </button>
+                <button class="nav-btn admin-only" data-tab="draw" id="nav-draw">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    <span>Sorteo</span>
+                </button>
+                <button class="nav-btn admin-only" data-tab="config" id="nav-config">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                    <span>Ajustes</span>
+                </button>
+                <button class="nav-btn" id="btn-login-trigger">
+                    <svg class="icon" id="login-icon" viewBox="0 0 24 24">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                    <span id="login-text">Acceso Admin</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- TAB 1: DASHBOARD -->
+        <section id="tab-dashboard" class="tab-pane active">
+            <div class="dashboard-grid">
+                <!-- Welcome & Summary Card -->
+                <div class="card welcome-card col-span-3">
+                    <div class="welcome-content">
+                        <h2>Panel General del Torneo</h2>
+                        <p>Gestiona los grupos, partidos, resultados y las eliminatorias de la Copa San Pedro 2026. El sistema vigila el cumplimiento de las reglas de negocio (descanso de equipos y límite de partidos diarios) de manera dinámica.</p>
+                        <div class="dashboard-stats">
+                            <div class="stat-item">
+                                <span class="stat-val">24</span>
+                                <span class="stat-lbl">Equipos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val" id="stat-matches-total">--</span>
+                                <span class="stat-lbl">Partidos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val" id="stat-matches-completed">--</span>
+                                <span class="stat-lbl">Completados</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val" id="stat-progress">--%</span>
+                                <span class="stat-lbl">Progreso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Constraints Status Card -->
+                <div class="card constraints-card">
+                    <h3>Estado de Reglas de Negocio</h3>
+                    <ul class="constraints-list" id="dashboard-rules-list">
+                        <!-- Filled by JS -->
+                    </ul>
+                    <div class="info-alert mt-4">
+                        <svg class="icon-small" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        <span>El calendario inicial se genera optimizando los descansos y la carga diaria de partidos.</span>
+                    </div>
+                </div>
+
+                <!-- Next Matches Card -->
+                <div class="card matches-summary-card col-span-2">
+                    <div class="card-header-actions">
+                        <h3>Partidos Recientes / Próximos</h3>
+                        <button class="btn btn-secondary btn-sm admin-only" id="btn-quick-simulate">Simular Resultados</button>
+                    </div>
+                    <div class="quick-matches-list" id="dashboard-matches-list">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB PRESENTATION -->
+        <section id="tab-presentation" class="tab-pane">
+            <div class="presentation-container">
+                <div class="slide-wrapper" id="slide-container">
+                    <!-- Slide content rendered by JS -->
+                </div>
+                <div class="slide-nav">
+                    <button class="btn btn-secondary btn-sm" id="btn-prev-slide">Anterior</button>
+                    <div class="slide-dots" id="slide-dots">
+                        <!-- Dots rendered by JS -->
+                    </div>
+                    <button class="btn btn-primary btn-sm" id="btn-next-slide">Siguiente</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: GROUPS & STANDINGS -->
+        <section id="tab-groups" class="tab-pane">
+            <div class="section-header">
+                <h2>Distribución de Grupos y Clasificación</h2>
+                <div class="group-tabs-selector">
+                    <button class="tab-pill active" data-group-type="all">Todos</button>
+                    <button class="tab-pill" data-group-type="capital">Capital (A-D)</button>
+                    <button class="tab-pill" data-group-type="provincia">Provincia (E-F)</button>
+                </div>
+            </div>
+            
+            <div class="groups-grid" id="groups-container">
+                <!-- Filled by JS -->
+            </div>
+        </section>
+
+        <!-- TAB 3: CALENDAR -->
+        <section id="tab-calendar" class="tab-pane">
+            <div class="calendar-layout">
+                <!-- Sidebar Filters -->
+                <aside class="calendar-sidebar">
+                    <div class="card filter-card">
+                        <h3>Filtros de Búsqueda</h3>
+                        <div class="form-group">
+                            <label for="filter-stage">Fase</label>
+                            <select id="filter-stage">
+                                <option value="all">Todas las Fases</option>
+                                <option value="group">Fase de Grupos</option>
+                                <option value="playoffs">Fase Eliminatoria</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filter-group">Grupo</label>
+                            <select id="filter-group">
+                                <option value="all">Todos los Grupos</option>
+                                <option value="A">Grupo A (Capital)</option>
+                                <option value="B">Grupo B (Capital)</option>
+                                <option value="C">Grupo C (Capital)</option>
+                                <option value="D">Grupo D (Capital)</option>
+                                <option value="E">Grupo E (Provincia)</option>
+                                <option value="F">Grupo F (Provincia)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filter-team">Equipo</label>
+                            <select id="filter-team">
+                                <option value="all">Todos los Equipos</option>
+                                <!-- Filled by JS -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="filter-status">Estado</label>
+                            <select id="filter-status">
+                                <option value="all">Todos</option>
+                                <option value="pending">Pendientes</option>
+                                <option value="completed">Completados</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="card warning-legend-card">
+                        <h3>Leyenda de Alertas</h3>
+                        <ul class="legend-list">
+                            <li><span class="dot dot-rest"></span> <span>Restricción de descanso (&lt; 2 días)</span></li>
+                            <li><span class="dot dot-load"></span> <span>Carga excesiva (&gt; 2 partidos/día)</span></li>
+                            <li><span class="dot dot-blocked"></span> <span>Fecha bloqueada ocupada</span></li>
+                            <li><span class="dot dot-wrongday"></span> <span>Día de juego incorrecto para zona</span></li>
+                            <li><span class="dot dot-samegroupday"></span> <span>Mismo grupo en el mismo día</span></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Main Calendar View -->
+                <div class="calendar-main-pane">
+                    <div class="calendar-view-header">
+                        <div class="view-toggle">
+                            <button class="btn-toggle active" id="view-mode-list">Lista</button>
+                            <button class="btn-toggle" id="view-mode-calendar">Calendario Visual</button>
+                        </div>
+                        <div class="calendar-nav-controls hidden" id="calendar-month-nav">
+                            <button class="btn-nav" id="btn-prev-month">&lt;</button>
+                            <h3 id="calendar-month-title">Junio 2026</h3>
+                            <button class="btn-nav" id="btn-next-month">&gt;</button>
+                        </div>
+                    </div>
+
+                    <!-- List View -->
+                    <div class="matches-list-container" id="matches-list-view">
+                        <!-- Filled by JS -->
+                    </div>
+
+                    <!-- Visual Calendar Grid View -->
+                    <div class="calendar-grid-container hidden" id="matches-grid-view">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: PLAYOFFS -->
+        <section id="tab-playoffs" class="tab-pane">
+            <div class="playoffs-container">
+                <div class="section-header">
+                    <h2>Fase Eliminatoria (Playoffs)</h2>
+                    <p class="description">Al simular o ingresar los resultados de la fase de grupos, los clasificados se colocarán automáticamente aquí. Los ganadores avanzan hasta la Gran Final.</p>
+                </div>
+
+                <div class="bracket-selector">
+                    <button class="tab-pill active" id="btn-bracket-capital">Playoffs Capital</button>
+                    <button class="tab-pill" id="btn-bracket-provincia">Playoffs Provincia</button>
+                    <button class="tab-pill" id="btn-bracket-final">Gran Final Absoluta</button>
+                </div>
+
+                <!-- Capital Bracket -->
+                <div class="bracket-layout-wrapper" id="bracket-capital-view">
+                    <div class="bracket-column">
+                        <h4>Cuartos de Final (26 - 29 Jun)</h4>
+                        <div class="match-cards-col" id="capital-cf-matches">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                    <div class="bracket-column">
+                        <h4>Semifinales (10 Jul)</h4>
+                        <div class="match-cards-col" id="capital-sf-matches">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                    <div class="bracket-column">
+                        <h4>Final Capital (13 Jul)</h4>
+                        <div class="match-cards-col" id="capital-final-matches">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Provincia Bracket -->
+                <div class="bracket-layout-wrapper hidden" id="bracket-provincia-view">
+                    <div class="bracket-column">
+                        <h4>Semifinales (30 Jun - 2 Jul)</h4>
+                        <div class="match-cards-col" id="provincia-sf-matches">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                    <div class="bracket-column">
+                        <h4>Final Provincia (7 Jul)</h4>
+                        <div class="match-cards-col" id="provincia-final-matches">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grand Final -->
+                <div class="bracket-layout-wrapper hidden" id="bracket-final-view">
+                    <div class="grand-final-stage">
+                        <div class="trophy-icon">🏆</div>
+                        <h3>Gran Final Absoluta</h3>
+                        <p class="sub-text">17 de Julio (Capital vs Provincia)</p>
+                        <div class="grand-final-match-container" id="grand-final-match">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: DRAW / SORTEO -->
+        <section id="tab-draw" class="tab-pane">
+            <div class="draw-container">
+                <div class="section-header flex-header">
+                    <div>
+                        <h2>Sorteo en Directo</h2>
+                        <p class="description">Relaciona los equipos inscritos reales con las claves de sorteo (C1-C16 y P1-P8). Al vincular un equipo a una clave, los grupos y calendarios se actualizarán automáticamente en tiempo real.</p>
+                    </div>
+                    <div class="draw-actions">
+                        <button class="btn btn-secondary btn-sm" id="btn-draw-randomize">Asignación Aleatoria</button>
+                        <button class="btn btn-danger btn-sm" id="btn-draw-reset">Reiniciar Sorteo</button>
+                    </div>
+                </div>
+
+                <div class="draw-instructions">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    <span><strong>Instrucciones:</strong> 1. Selecciona un equipo disponible en la columna de la izquierda (se resaltará en dorado). 2. Pulsa sobre la clave de sorteo (bolita) a la que deseas asignarlo. Para desvincular un equipo asignado, haz clic en la "x" roja que aparece en la esquina superior derecha de la bolita al pasar el cursor por encima.</span>
+                </div>
+
+                <div class="draw-layout-grid">
+                    <!-- Capital Draw Panel -->
+                    <div class="card draw-zone-card">
+                        <div class="draw-zone-header">
+                            <h3>Fase Capital (Grupos A-D)</h3>
+                            <span class="draw-counter" id="capital-draw-counter">0 / 16 Asignados</span>
+                        </div>
+                        
+                        <div class="draw-split-layout">
+                            <!-- List of Unassigned Teams -->
+                            <div class="unassigned-teams-section">
+                                <h4>Equipos Disponibles</h4>
+                                <div class="unassigned-list" id="capital-unassigned-list">
+                                    <!-- Filled by JS -->
+                                </div>
+                            </div>
+                            
+                            <!-- Grid of Keys C1-C16 -->
+                            <div class="keys-grid-section">
+                                <h4>Claves del Sorteo (Bolitas)</h4>
+                                <div class="keys-grid" id="capital-keys-grid">
+                                    <!-- Filled by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Provincia Draw Panel -->
+                    <div class="card draw-zone-card">
+                        <div class="draw-zone-header">
+                            <h3>Fase Provincia (Grupos E-F)</h3>
+                            <span class="draw-counter" id="provincia-draw-counter">0 / 8 Asignados</span>
+                        </div>
+
+                        <div class="draw-split-layout">
+                            <!-- List of Unassigned Teams -->
+                            <div class="unassigned-teams-section">
+                                <h4>Equipos Disponibles</h4>
+                                <div class="unassigned-list" id="provincia-unassigned-list">
+                                    <!-- Filled by JS -->
+                                </div>
+                            </div>
+
+                            <!-- Grid of Keys P1-P8 -->
+                            <div class="keys-grid-section">
+                                <h4>Claves del Sorteo (Bolitas)</h4>
+                                <div class="keys-grid" id="provincia-keys-grid">
+                                    <!-- Filled by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 6: SETTINGS / ADJUSTS -->
+        <section id="tab-config" class="tab-pane">
+            <div class="config-grid">
+                <div class="card config-card">
+                    <h3>Reglas de Sorteo y Calendario</h3>
+                    <div class="form-group-checkbox mt-4">
+                        <input type="checkbox" id="cfg-allow-weekends">
+                        <label for="cfg-allow-weekends">Habilitar Fines de Semana (Sábados/Domingos) para Capital</label>
+                    </div>
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="cfg-use-multisede" checked>
+                        <label for="cfg-use-multisede">Uso de Multisede (el límite de carga es por campo, no total)</label>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="cfg-max-matches">Límite de partidos diarios por sede</label>
+                        <input type="number" id="cfg-max-matches" min="1" max="5" value="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="cfg-min-rest">Mínimo de días de descanso por equipo</label>
+                        <input type="number" id="cfg-min-rest" min="0" max="5" value="2">
+                    </div>
+                    <div class="form-group-actions mt-6">
+                        <button class="btn btn-primary" id="btn-regenerate-calendar">Regenerar Calendario</button>
+                        <button class="btn btn-secondary" id="btn-clear-scores">Limpiar Resultados</button>
+                        <button class="btn btn-danger" id="btn-reset-app">Restablecer Todo</button>
+                    </div>
+                </div>
+
+                <div class="card blocked-dates-card">
+                    <h3>Fechas Bloqueadas Oficiales</h3>
+                    <p class="description">Las fechas bloqueadas por el Mundial o por las Hogueras de Alicante. Se pueden añadir o eliminar de la base de datos.</p>
+                    <ul class="blocked-dates-list" id="blocked-dates-ul">
+                        <!-- Filled by JS -->
+                    </ul>
+                    <div class="add-blocked-date-form mt-4">
+                        <input type="date" id="add-blocked-date-input" value="2026-06-01">
+                        <button class="btn btn-secondary btn-sm" id="btn-add-blocked-date">Bloquear Fecha</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Score & Match Editing -->
+    <div class="modal-backdrop" id="match-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-match-title">Editar Partido</h3>
+                <button class="btn-close" id="btn-close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-teams-row">
+                    <div class="modal-team-input">
+                        <span class="modal-team-code" id="modal-home-code">C1</span>
+                        <label class="modal-team-name" id="modal-home-name">Equipo A1</label>
+                        <input type="number" id="modal-home-score" min="0" placeholder="-">
+                    </div>
+                    <div class="modal-vs">VS</div>
+                    <div class="modal-team-input">
+                        <span class="modal-team-code" id="modal-away-code">C2</span>
+                        <label class="modal-team-name" id="modal-away-name">Equipo A2</label>
+                        <input type="number" id="modal-away-score" min="0" placeholder="-">
+                    </div>
+                </div>
+
+                <hr class="modal-divider">
+
+                <div class="modal-details-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="modal-date">Fecha</label>
+                            <input type="date" id="modal-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="modal-time">Hora</label>
+                            <input type="time" id="modal-time">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-venue">Sede / Campo</label>
+                        <input type="text" id="modal-venue" placeholder="Ej. Campo de SCD San Blas">
+                    </div>
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="modal-status-completed">
+                        <label for="modal-status-completed">Marcar como Completado</label>
+                    </div>
+                </div>
+
+                <div class="validation-warning-box hidden" id="modal-warning-box">
+                    <h4>⚠️ Alertas de Restricción detectadas:</h4>
+                    <ul id="modal-warning-list">
+                        <!-- Filled by JS -->
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="btn-cancel-modal">Cancelar</button>
+                <button class="btn btn-primary" id="btn-save-modal">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Admin Login -->
+    <div class="modal-backdrop" id="login-modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3>Acceso Administrador</h3>
+                <button class="btn-close" id="btn-close-login-modal">&times;</button>
+            </div>
+            <form id="login-form">
+                <div class="modal-body">
+                    <div class="modal-details-form" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="login-username">Usuario</label>
+                            <input type="text" id="login-username" required placeholder="Introduce usuario">
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Contraseña</label>
+                            <input type="password" id="login-password" required placeholder="Introduce contraseña">
+                        </div>
+                        <div id="login-error-msg" style="color: var(--danger); font-size: 0.85rem; display: none;">
+                            Usuario o contraseña incorrectos.
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-login-modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

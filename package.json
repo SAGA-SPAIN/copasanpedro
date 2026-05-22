@@ -1,0 +1,17 @@
+{
+  "name": "sorteo-copa-san-pedro",
+  "version": "1.0.0",
+  "description": "Sistema de sorteo y gestión de calendario para la Copa San Pedro 2026",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  },
+  "author": "Antigravity",
+  "license": "ISC"
+}
