@@ -513,35 +513,35 @@ function generateInitialSchedule() {
 
 function generatePlayoffsSkeleton() {
     // Generate Capital Playoffs Skeleton
-    // Cuartos de Final (CF1, CF2, CF3, CF4) - 6 and 8 Jul
-    // Semifinales (SF-C1, SF-C2) - 13 Jul
-    // Final Capital - 17 Jul
+    // Cuartos de Final (CF1, CF2, CF3, CF4) - 29 Jun and 1 Jul
+    // Semifinales (SF-C1, SF-C2) - 6 Jul and 8 Jul
+    // Final Capital - 10 Jul
     
     const capitalPlayoffs = [
-        { id: 'CF1', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo A', awayTeam: '2º Grupo C', homeScore: null, awayScore: null, date: '2026-07-06', time: '20:00', venue: '', status: 'pending' },
-        { id: 'CF2', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo B', awayTeam: '2º Grupo D', homeScore: null, awayScore: null, date: '2026-07-06', time: '20:00', venue: '', status: 'pending' },
-        { id: 'CF3', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo C', awayTeam: '2º Grupo A', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
-        { id: 'CF4', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo D', awayTeam: '2º Grupo B', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
+        { id: 'CF1', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo A', awayTeam: '2º Grupo C', homeScore: null, awayScore: null, date: '2026-06-29', time: '20:00', venue: '', status: 'pending' },
+        { id: 'CF2', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo B', awayTeam: '2º Grupo D', homeScore: null, awayScore: null, date: '2026-06-29', time: '20:00', venue: '', status: 'pending' },
+        { id: 'CF3', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo C', awayTeam: '2º Grupo A', homeScore: null, awayScore: null, date: '2026-07-01', time: '20:00', venue: '', status: 'pending' },
+        { id: 'CF4', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo D', awayTeam: '2º Grupo B', homeScore: null, awayScore: null, date: '2026-07-01', time: '20:00', venue: '', status: 'pending' },
         
-        { id: 'SF-C1', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF1', awayTeam: 'Ganador CF2', homeScore: null, awayScore: null, date: '2026-07-13', time: '20:00', venue: '', status: 'pending' },
-        { id: 'SF-C2', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF3', awayTeam: 'Ganador CF4', homeScore: null, awayScore: null, date: '2026-07-13', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-C1', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF1', awayTeam: 'Ganador CF2', homeScore: null, awayScore: null, date: '2026-07-06', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-C2', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF3', awayTeam: 'Ganador CF4', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
         
-        { id: 'Final-C', stage: 'playoffs', zone: 'capital', round: 'F', homeTeam: 'Ganador SF-C1', awayTeam: 'Ganador SF-C2', homeScore: null, awayScore: null, date: '2026-07-17', time: '20:00', venue: '', status: 'pending' }
+        { id: 'Final-C', stage: 'playoffs', zone: 'capital', round: 'F', homeTeam: 'Ganador SF-C1', awayTeam: 'Ganador SF-C2', homeScore: null, awayScore: null, date: '2026-07-10', time: '20:00', venue: '', status: 'pending' }
     ];
 
     // Provincia Playoffs Skeleton
-    // Semifinales (SF-P1, SF-P2) - 7 Jul, 9 Jul
-    // Final Provincia - 14 Jul
+    // Semifinales (SF-P1, SF-P2) - 6 Jul, 8 Jul
+    // Final Provincia - 10 Jul
     const provinciaPlayoffs = [
-        { id: 'SF-P1', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo E', awayTeam: '2º Grupo F', homeScore: null, awayScore: null, date: '2026-07-07', time: '20:00', venue: '', status: 'pending' },
-        { id: 'SF-P2', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo F', awayTeam: '2º Grupo E', homeScore: null, awayScore: null, date: '2026-07-09', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-P1', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo E', awayTeam: '2º Grupo F', homeScore: null, awayScore: null, date: '2026-07-06', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-P2', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo F', awayTeam: '2º Grupo E', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
         
-        { id: 'Final-P', stage: 'playoffs', zone: 'provincia', round: 'F', homeTeam: 'Ganador SF-P1', awayTeam: 'Ganador SF-P2', homeScore: null, awayScore: null, date: '2026-07-14', time: '20:00', venue: '', status: 'pending' }
+        { id: 'Final-P', stage: 'playoffs', zone: 'provincia', round: 'F', homeTeam: 'Ganador SF-P1', awayTeam: 'Ganador SF-P2', homeScore: null, awayScore: null, date: '2026-07-10', time: '20:00', venue: '', status: 'pending' }
     ];
 
-    // Gran Final Absoluta - 24 Jul
+    // Gran Final Absoluta - 17 Jul
     const grandFinal = [
-        { id: 'Gran-Final', stage: 'playoffs', zone: 'final', round: 'GF', homeTeam: 'Campeón Capital', awayTeam: 'Campeón Provincia', homeScore: null, awayScore: null, date: '2026-07-24', time: '20:00', venue: '', status: 'pending' }
+        { id: 'Gran-Final', stage: 'playoffs', zone: 'final', round: 'GF', homeTeam: 'Campeón Capital', awayTeam: 'Campeón Provincia', homeScore: null, awayScore: null, date: '2026-07-17', time: '20:00', venue: '', status: 'pending' }
     ];
 
     state.matches.push(...capitalPlayoffs, ...provinciaPlayoffs, ...grandFinal);
