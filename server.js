@@ -824,7 +824,7 @@ function generateDefaultState() {
         "awayTeam": "Ganador CF2",
         "homeScore": null,
         "awayScore": null,
-        "date": "2026-07-06",
+        "date": "2026-07-03",
         "time": "20:30",
         "venue": "",
         "status": "pending"
@@ -838,7 +838,7 @@ function generateDefaultState() {
         "awayTeam": "Ganador CF4",
         "homeScore": null,
         "awayScore": null,
-        "date": "2026-07-08",
+        "date": "2026-07-06",
         "time": "20:30",
         "venue": "",
         "status": "pending"

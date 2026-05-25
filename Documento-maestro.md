@@ -40,8 +40,8 @@ Los 24 equipos se dividen de forma aleatoria (mediante el panel de sorteo intera
   - CF4: 1ºD vs 2ºB (8 de Julio)
 - **Semifinales (SF):**
   - **Capital:**
-    - SF-C1: Ganador CF1 vs Ganador CF3 (Viernes, 10 de Julio)
-    - SF-C2: Ganador CF2 vs Ganador CF4 (Lunes, 13 de Julio)
+    - SF-C1: Ganador CF1 vs Ganador CF2 (Viernes, 3 de Julio)
+    - SF-C2: Ganador CF3 vs Ganador CF4 (Lunes, 6 de Julio)
   - **Provincia:**
     - SF-P1: 1º Grupo E vs 2º Grupo F (Martes, 7 de Julio)
     - SF-P2: 1º Grupo F vs 2º Grupo E (Jueves, 9 de Julio)
