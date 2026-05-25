@@ -86,7 +86,7 @@ function generateDefaultState() {
   },
   {
     "id": "C3",
-    "name": "ACFC ACADEMY",
+    "name": "ALICANTE FOOTBALL ACADEMY",
     "zone": "capital",
     "group": "D"
   },
@@ -116,7 +116,7 @@ function generateDefaultState() {
   },
   {
     "id": "C8",
-    "name": "CLUB ATLÉTICO EL PRINCIPIO",
+    "name": "C.A. EL PRINCIPIO",
     "zone": "capital",
     "group": "C"
   },
@@ -164,49 +164,49 @@ function generateDefaultState() {
   },
   {
     "id": "C16",
-    "name": "ALICANTE CITY CF",
+    "name": "ALICANTE CITY FC ACADEMY",
     "zone": "capital",
     "group": "C"
   },
   {
     "id": "P1",
-    "name": "MONEGRE MUTXAMEL",
+    "name": "MONNEGRE MUCHAMIEL",
     "zone": "provincia",
     "group": "F"
   },
   {
     "id": "P2",
-    "name": "FUNDACION CD CAMPELLO",
+    "name": "FUNDACIÓN CD CAMPELLO",
     "zone": "provincia",
     "group": "F"
   },
   {
     "id": "P3",
-    "name": "JOVE ESPAÑOL SAN VICENTE",
+    "name": "JOVE ESPAÑOL SANT VICENT",
     "zone": "provincia",
     "group": "E"
   },
   {
     "id": "P4",
-    "name": "VILLAJOYOSA",
+    "name": "VILLAJOYOSA CF",
     "zone": "provincia",
     "group": "F"
   },
   {
     "id": "P5",
-    "name": "EL ALET",
+    "name": "ALTET CF",
     "zone": "provincia",
     "group": "E"
   },
   {
     "id": "P6",
-    "name": "ATH TORRELLANO",
+    "name": "AC TORRELANO",
     "zone": "provincia",
     "group": "E"
   },
   {
     "id": "P7",
-    "name": "GIMNASTIC SAN VICENTE",
+    "name": "GIMNÀSTIC SANT VICENT",
     "zone": "provincia",
     "group": "E"
   },

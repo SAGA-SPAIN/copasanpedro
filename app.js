@@ -5,12 +5,12 @@ const INITIAL_TEAMS = [
     // Capital (Grupos A-D)
     { id: 'C1', name: 'CF BARRIO SAN GABRIEL', zone: 'capital', group: 'B' },
     { id: 'C2', name: 'VIASPORT MARISTAS', zone: 'capital', group: 'A' },
-    { id: 'C3', name: 'ACFC ACADEMY', zone: 'capital', group: 'D' },
+    { id: 'C3', name: 'ALICANTE FOOTBALL ACADEMY', zone: 'capital', group: 'D' },
     { id: 'C4', name: 'MEDITERRÁNEO-PEÑA EL BOTIJO', zone: 'capital', group: 'A' },
     { id: 'C5', name: 'CD VILLAFRANQUEZA', zone: 'capital', group: 'C' },
     { id: 'C6', name: 'ATLETICO SAN BLAS', zone: 'capital', group: 'D' },
     { id: 'C7', name: 'SCD SAN BLAS', zone: 'capital', group: 'A' },
-    { id: 'C8', name: 'CLUB ATLÉTICO EL PRINCIPIO', zone: 'capital', group: 'C' },
+    { id: 'C8', name: 'C.A. EL PRINCIPIO', zone: 'capital', group: 'C' },
     { id: 'C9', name: 'INTER LEUKA-DUAL LINK', zone: 'capital', group: 'B' },
     { id: 'C10', name: 'SALESIANOS BY DICKENS', zone: 'capital', group: 'C' },
     { id: 'C11', name: 'ALICANTE SPORT ACADEMY', zone: 'capital', group: 'B' },
@@ -18,16 +18,16 @@ const INITIAL_TEAMS = [
     { id: 'C13', name: 'BETIS FLORIDA', zone: 'capital', group: 'D' },
     { id: 'C14', name: 'CD CAMPELLO- CASA SALVI', zone: 'capital', group: 'B' },
     { id: 'C15', name: 'PLAYAS ALICANTE', zone: 'capital', group: 'A' },
-    { id: 'C16', name: 'ALICANTE CITY CF', zone: 'capital', group: 'C' },
+    { id: 'C16', name: 'ALICANTE CITY FC ACADEMY', zone: 'capital', group: 'C' },
 
     // Provincia (Grupos E-F)
-    { id: 'P1', name: 'MONEGRE MUTXAMEL', zone: 'provincia', group: 'F' },
-    { id: 'P2', name: 'FUNDACION CD CAMPELLO', zone: 'provincia', group: 'F' },
-    { id: 'P3', name: 'JOVE ESPAÑOL SAN VICENTE', zone: 'provincia', group: 'E' },
-    { id: 'P4', name: 'VILLAJOYOSA', zone: 'provincia', group: 'F' },
-    { id: 'P5', name: 'EL ALET', zone: 'provincia', group: 'E' },
-    { id: 'P6', name: 'ATH TORRELLANO', zone: 'provincia', group: 'E' },
-    { id: 'P7', name: 'GIMNASTIC SAN VICENTE', zone: 'provincia', group: 'E' },
+    { id: 'P1', name: 'MONNEGRE MUCHAMIEL', zone: 'provincia', group: 'F' },
+    { id: 'P2', name: 'FUNDACIÓN CD CAMPELLO', zone: 'provincia', group: 'F' },
+    { id: 'P3', name: 'JOVE ESPAÑOL SANT VICENT', zone: 'provincia', group: 'E' },
+    { id: 'P4', name: 'VILLAJOYOSA CF', zone: 'provincia', group: 'F' },
+    { id: 'P5', name: 'ALTET CF', zone: 'provincia', group: 'E' },
+    { id: 'P6', name: 'AC TORRELANO', zone: 'provincia', group: 'E' },
+    { id: 'P7', name: 'GIMNÀSTIC SANT VICENT', zone: 'provincia', group: 'E' },
     { id: 'P8', name: 'MUTXAMEL CF', zone: 'provincia', group: 'F' }
 ];
 
@@ -51,13 +51,13 @@ const FALLBACK_ENROLLED_TEAMS = {
     capital: [
         "INTER LEUKA-DUAL LINK",
         "SCD SAN BLAS",
-        "ACFC ACADEMY",
+        "ALICANTE FOOTBALL ACADEMY",
         "SALESIANOS BY DICKENS",
         "CD CAMPELLO- CASA SALVI",
         "CF BARRIO SAN GABRIEL",
         "CD VILLAFRANQUEZA",
         "BETIS FLORIDA",
-        "CLUB ATLÉTICO EL PRINCIPIO",
+        "C.A. EL PRINCIPIO",
         "VIASPORT MARISTAS",
         "LACROSS BABEL",
         "PLAYAS ALICANTE",
@@ -71,10 +71,10 @@ const FALLBACK_ENROLLED_TEAMS = {
         "GIMNÀSTIC SANT VICENT",
         "MONNEGRE MUCHAMIEL",
         "MUTXAMEL CF",
-        "ATH TORRELANO",
-        "VILLAJOYOSA",
+        "AC TORRELANO",
+        "VILLAJOYOSA CF",
         "FUNDACIÓN CD CAMPELLO",
-        "ALTET-REBOLLEDO"
+        "ALTET CF"
     ]
 };
 let isAdmin = false;
@@ -907,6 +907,30 @@ function bindEvents() {
     document.getElementById('filter-team').addEventListener('change', handleFiltersChange);
     document.getElementById('filter-status').addEventListener('change', handleFiltersChange);
 
+    // Calendar Grouping & PDF Download
+    const groupingSelect = document.getElementById('calendar-grouping-mode');
+    if (groupingSelect) {
+        groupingSelect.addEventListener('change', () => {
+            renderMatchesList();
+        });
+    }
+    
+    const downloadPdfBtn = document.getElementById('btn-download-pdf');
+    if (downloadPdfBtn) {
+        downloadPdfBtn.addEventListener('click', () => {
+            const stageVal = document.getElementById('filter-stage').options[document.getElementById('filter-stage').selectedIndex].text;
+            const groupVal = document.getElementById('filter-group').options[document.getElementById('filter-group').selectedIndex].text;
+            const teamVal = document.getElementById('filter-team').options[document.getElementById('filter-team').selectedIndex].text;
+            const statusVal = document.getElementById('filter-status').options[document.getElementById('filter-status').selectedIndex].text;
+            const groupingSelectEl = document.getElementById('calendar-grouping-mode');
+            const groupingVal = groupingSelectEl ? groupingSelectEl.options[groupingSelectEl.selectedIndex].text : 'Fecha';
+            
+            document.getElementById('print-subtitle').innerText = `Filtros: ${stageVal} | ${groupVal} | ${teamVal} | ${statusVal} (Agrupado por: ${groupingVal})`;
+            
+            window.print();
+        });
+    }
+
     // Quick Simulation Button
     document.getElementById('btn-quick-simulate').addEventListener('click', simulateRandomScores);
 
@@ -1080,6 +1104,11 @@ function switchCalendarViewMode(mode) {
     document.getElementById('matches-grid-view').classList.toggle('hidden', mode !== 'grid');
     document.getElementById('calendar-month-nav').classList.toggle('hidden', mode !== 'grid');
     
+    const groupingContainer = document.getElementById('calendar-grouping-container');
+    const downloadPdfBtn = document.getElementById('btn-download-pdf');
+    if (groupingContainer) groupingContainer.classList.toggle('hidden', mode !== 'list');
+    if (downloadPdfBtn) downloadPdfBtn.classList.toggle('hidden', mode !== 'list');
+    
     if (mode === 'grid') {
         renderVisualGrid();
     }
@@ -1120,6 +1149,9 @@ function renderAll() {
     renderConfigPanel();
     renderDrawTab();
     renderSlide();
+    
+    // Sync view mode on load
+    switchCalendarViewMode(state.calendarViewMode || 'list');
 }
 
 function renderDashboard() {
@@ -1293,14 +1325,6 @@ function renderMatchesList() {
         return true;
     });
     
-    // Sort matches chronologically
-    filtered.sort((a, b) => {
-        if (!a.date) return 1;
-        if (!b.date) return -1;
-        if (a.date !== b.date) return new Date(a.date) - new Date(b.date);
-        return a.time.localeCompare(b.time);
-    });
-    
     if (filtered.length === 0) {
         container.innerHTML = `
             <div class="card text-center" style="padding: 3rem; text-align: center; color: var(--text-muted);">
@@ -1310,65 +1334,211 @@ function renderMatchesList() {
         return;
     }
     
-    // Group by Date for cleaner interface
-    let currentDate = '';
-    let dateSection = null;
-    let listInSection = null;
+    const groupingSelect = document.getElementById('calendar-grouping-mode');
+    const groupingMode = groupingSelect ? groupingSelect.value : 'date';
     
-    filtered.forEach(m => {
-        if (m.date !== currentDate) {
-            currentDate = m.date;
-            
-            dateSection = document.createElement('div');
-            dateSection.className = 'date-group-section mt-6';
-            
-            const dateTitle = document.createElement('h3');
-            dateTitle.style.fontSize = '0.95rem';
-            dateTitle.style.color = 'var(--text-muted)';
-            dateTitle.style.marginBottom = '0.75rem';
-            dateTitle.style.display = 'flex';
-            dateTitle.style.alignItems = 'center';
-            dateTitle.style.justifyContent = 'space-between';
-            dateTitle.innerText = m.date ? formatDateFriendly(m.date) : 'Sin fecha asignada';
-            
-            // Check if this date has any violations overall
-            const matchesThisDay = state.matches.filter(x => x.date === m.date);
-            const loadLimit = state.settings.maxMatchesPerDay;
-            
-            // Let's count conflicts
-            let loadConflict = false;
-            if (m.date) {
-                if (state.settings.useMultisede) {
-                    const venueLoads = {};
-                    matchesThisDay.forEach(x => {
-                        const v = getMatchVenue(x);
-                        venueLoads[v] = (venueLoads[v] || 0) + 1;
-                    });
-                    loadConflict = Object.values(venueLoads).some(v => v > loadLimit);
-                } else {
-                    loadConflict = matchesThisDay.length > loadLimit;
-                }
-            }
-            
-            if (loadConflict) {
-                const badge = document.createElement('span');
-                badge.className = 'warning-indicator load';
-                badge.title = `Exceso de carga: Más de ${loadLimit} partidos hoy.`;
-                badge.innerText = '!';
-                dateTitle.appendChild(badge);
-            }
-            
-            dateSection.appendChild(dateTitle);
-            
-            listInSection = document.createElement('div');
-            listInSection.className = 'quick-matches-list';
-            dateSection.appendChild(listInSection);
-            
-            container.appendChild(dateSection);
-        }
+    if (groupingMode === 'date') {
+        // Sort matches chronologically
+        filtered.sort((a, b) => {
+            if (!a.date) return 1;
+            if (!b.date) return -1;
+            if (a.date !== b.date) return new Date(a.date) - new Date(b.date);
+            return a.time.localeCompare(b.time);
+        });
         
-        listInSection.appendChild(createMatchRowHTML(m));
-    });
+        let currentDate = '';
+        let dateSection = null;
+        let listInSection = null;
+        
+        filtered.forEach(m => {
+            if (m.date !== currentDate) {
+                currentDate = m.date;
+                
+                dateSection = document.createElement('div');
+                dateSection.className = 'date-group-section mt-6';
+                
+                const dateTitle = document.createElement('h3');
+                dateTitle.style.fontSize = '0.95rem';
+                dateTitle.style.color = 'var(--text-muted)';
+                dateTitle.style.marginBottom = '0.75rem';
+                dateTitle.style.display = 'flex';
+                dateTitle.style.alignItems = 'center';
+                dateTitle.style.justifyContent = 'space-between';
+                dateTitle.innerText = m.date ? formatDateFriendly(m.date) : 'Sin fecha asignada';
+                
+                // Check if this date has any violations overall
+                const matchesThisDay = state.matches.filter(x => x.date === m.date);
+                const loadLimit = state.settings.maxMatchesPerDay;
+                
+                let loadConflict = false;
+                if (m.date) {
+                    if (state.settings.useMultisede) {
+                        const venueLoads = {};
+                        matchesThisDay.forEach(x => {
+                            const v = getMatchVenue(x);
+                            venueLoads[v] = (venueLoads[v] || 0) + 1;
+                        });
+                        loadConflict = Object.values(venueLoads).some(v => v > loadLimit);
+                    } else {
+                        loadConflict = matchesThisDay.length > loadLimit;
+                    }
+                }
+                
+                if (loadConflict) {
+                    const badge = document.createElement('span');
+                    badge.className = 'warning-indicator load';
+                    badge.title = `Exceso de carga: Más de ${loadLimit} partidos hoy.`;
+                    badge.innerText = '!';
+                    dateTitle.appendChild(badge);
+                }
+                
+                dateSection.appendChild(dateTitle);
+                
+                listInSection = document.createElement('div');
+                listInSection.className = 'quick-matches-list';
+                dateSection.appendChild(listInSection);
+                
+                container.appendChild(dateSection);
+            }
+            
+            listInSection.appendChild(createMatchRowHTML(m));
+        });
+    } else if (groupingMode === 'round') {
+        const roundOrder = {
+            'group-1': 1, 'group-2': 2, 'group-3': 3,
+            'playoffs-CF': 4, 'playoffs-SF': 5, 'playoffs-F': 6, 'playoffs-GF': 7
+        };
+        
+        const getRoundKey = (m) => {
+            if (m.stage === 'group') return `group-${m.round}`;
+            return `playoffs-${m.round}`;
+        };
+        
+        const getRoundName = (key) => {
+            if (key === 'group-1') return 'Jornada 1 - Fase de Grupos';
+            if (key === 'group-2') return 'Jornada 2 - Fase de Grupos';
+            if (key === 'group-3') return 'Jornada 3 - Fase de Grupos';
+            if (key === 'playoffs-CF') return 'Fase Eliminatoria - Cuartos de Final';
+            if (key === 'playoffs-SF') return 'Fase Eliminatoria - Semifinales';
+            if (key === 'playoffs-F') return 'Fase Eliminatoria - Finales Regionales';
+            if (key === 'playoffs-GF') return 'Gran Final Absoluta';
+            return 'Otros Partidos';
+        };
+        
+        filtered.sort((a, b) => {
+            const keyA = getRoundKey(a);
+            const keyB = getRoundKey(b);
+            const ordA = roundOrder[keyA] || 99;
+            const ordB = roundOrder[keyB] || 99;
+            
+            if (ordA !== ordB) return ordA - ordB;
+            
+            if (!a.date) return 1;
+            if (!b.date) return -1;
+            if (a.date !== b.date) return new Date(a.date) - new Date(b.date);
+            return a.time.localeCompare(b.time);
+        });
+        
+        let currentRoundKey = '';
+        let roundSection = null;
+        let listInSection = null;
+        
+        filtered.forEach(m => {
+            const rKey = getRoundKey(m);
+            if (rKey !== currentRoundKey) {
+                currentRoundKey = rKey;
+                
+                roundSection = document.createElement('div');
+                roundSection.className = 'round-group-section mt-6';
+                
+                const roundTitle = document.createElement('h3');
+                roundTitle.style.fontSize = '0.95rem';
+                roundTitle.style.color = 'var(--text-muted)';
+                roundTitle.style.marginBottom = '0.75rem';
+                roundTitle.innerText = getRoundName(rKey);
+                
+                roundSection.appendChild(roundTitle);
+                
+                listInSection = document.createElement('div');
+                listInSection.className = 'quick-matches-list';
+                roundSection.appendChild(listInSection);
+                
+                container.appendChild(roundSection);
+            }
+            
+            listInSection.appendChild(createMatchRowHTML(m));
+        });
+    } else if (groupingMode === 'group') {
+        const getGroupKey = (m) => {
+            if (m.stage === 'group') return `group-${m.group}`;
+            if (m.zone === 'capital') return 'playoffs-capital';
+            if (m.zone === 'provincia') return 'playoffs-provincia';
+            return 'playoffs-final';
+        };
+        
+        const getGroupName = (key) => {
+            if (key === 'group-A') return 'Grupo A - Capital';
+            if (key === 'group-B') return 'Grupo B - Capital';
+            if (key === 'group-C') return 'Grupo C - Capital';
+            if (key === 'group-D') return 'Grupo D - Capital';
+            if (key === 'group-E') return 'Grupo E - Provincia';
+            if (key === 'group-F') return 'Grupo F - Provincia';
+            if (key === 'playoffs-capital') return 'Fase Eliminatoria - Capital';
+            if (key === 'playoffs-provincia') return 'Fase Eliminatoria - Provincia';
+            if (key === 'playoffs-final') return 'Gran Final Absoluta';
+            return 'Otros';
+        };
+        
+        const groupOrder = {
+            'group-A': 1, 'group-B': 2, 'group-C': 3, 'group-D': 4,
+            'group-E': 5, 'group-F': 6,
+            'playoffs-capital': 7, 'playoffs-provincia': 8, 'playoffs-final': 9
+        };
+        
+        filtered.sort((a, b) => {
+            const keyA = getGroupKey(a);
+            const keyB = getGroupKey(b);
+            const ordA = groupOrder[keyA] || 99;
+            const ordB = groupOrder[keyB] || 99;
+            
+            if (ordA !== ordB) return ordA - ordB;
+            
+            if (!a.date) return 1;
+            if (!b.date) return -1;
+            if (a.date !== b.date) return new Date(a.date) - new Date(b.date);
+            return a.time.localeCompare(b.time);
+        });
+        
+        let currentGroupKey = '';
+        let groupSection = null;
+        let listInSection = null;
+        
+        filtered.forEach(m => {
+            const gKey = getGroupKey(m);
+            if (gKey !== currentGroupKey) {
+                currentGroupKey = gKey;
+                
+                groupSection = document.createElement('div');
+                groupSection.className = 'group-group-section mt-6';
+                
+                const groupTitle = document.createElement('h3');
+                groupTitle.style.fontSize = '0.95rem';
+                groupTitle.style.color = 'var(--text-muted)';
+                groupTitle.style.marginBottom = '0.75rem';
+                groupTitle.innerText = getGroupName(gKey);
+                
+                groupSection.appendChild(groupTitle);
+                
+                listInSection = document.createElement('div');
+                listInSection.className = 'quick-matches-list';
+                groupSection.appendChild(listInSection);
+                
+                container.appendChild(groupSection);
+            }
+            
+            listInSection.appendChild(createMatchRowHTML(m));
+        });
+    }
 }
 
 function renderVisualGrid() {
@@ -1598,6 +1768,42 @@ function renderConfigPanel() {
 }
 
 // --- 9. VIEW COMPONENT BUILDERS (HTML GENERATORS) ---
+function getTeamShield(teamId) {
+    if (!teamId) return '';
+    const isPlaceholder = teamId.includes('Grupo') || teamId.includes('Ganador') || teamId.includes('Campeón') || teamId.includes('Pendiente') || teamId.includes('Vacante');
+    if (isPlaceholder) return '';
+
+    const shieldMap = {
+        'C1': 'CF Barrio San Gabriel.png',
+        'C2': 'CD Maristas de Alicante.png',
+        'C3': 'Alicante Football Academy.png',
+        'C4': 'Mediterráneo CF.png',
+        'C5': 'CD Villafranqueza.png',
+        'C6': 'Atlético San Blas CF.png',
+        'C7': 'SCD San Blas.png',
+        'C8': 'CA El Principio.png',
+        'C9': 'Inter Leuka Alicante.png',
+        'C10': 'CD Salesianos.png',
+        'C11': 'Alicante Sports Academy.png',
+        'C12': 'Lacross Babel.png',
+        'C13': 'CD Betis Florida.png',
+        'C14': 'CD Campello.png',
+        'C15': 'Playas de Alicante CF.png',
+        'C16': 'Alicante City CF Academy.png',
+        'P1': 'CF Monnegre Mutxamel.png',
+        'P2': 'CD Campello.png',
+        'P3': 'Jove Español de San Vicente.png',
+        'P4': 'Villajoyosa CF.png',
+        'P5': 'CD El Altet.png',
+        'P6': 'AC Torrellano.png',
+        'P7': 'Gimnàstic San Vicente.png',
+        'P8': 'Mutxamel CF.png'
+    };
+
+    const fileName = shieldMap[teamId];
+    return fileName ? `/Escudos/${encodeURIComponent(fileName)}` : '';
+}
+
 function createMatchRowHTML(match) {
     const item = document.createElement('div');
     item.className = `match-row-item ${match.status === 'completed' ? 'completed' : ''}`;
@@ -1610,6 +1816,11 @@ function createMatchRowHTML(match) {
     
     const homeCodeHTML = isPlaceholderHome ? '' : `<span class="team-code">${match.homeTeam}</span>`;
     const awayCodeHTML = isPlaceholderAway ? '' : `<span class="team-code">${match.awayTeam}</span>`;
+    
+    const homeShieldUrl = getTeamShield(match.homeTeam);
+    const awayShieldUrl = getTeamShield(match.awayTeam);
+    const homeShieldHTML = homeShieldUrl ? `<img class="team-shield" src="${homeShieldUrl}" alt="" onerror="this.style.display='none'">` : '';
+    const awayShieldHTML = awayShieldUrl ? `<img class="team-shield" src="${awayShieldUrl}" alt="" onerror="this.style.display='none'">` : '';
     
     const isCompleted = match.status === 'completed';
     const scoreHTML = isCompleted 
@@ -1642,9 +1853,11 @@ function createMatchRowHTML(match) {
             <div class="match-team home">
                 <span class="team-name" title="${homeTeamName}">${homeTeamName}</span>
                 ${homeCodeHTML}
+                ${homeShieldHTML}
             </div>
             ${scoreHTML}
             <div class="match-team away">
+                ${awayShieldHTML}
                 ${awayCodeHTML}
                 <span class="team-name" title="${awayTeamName}">${awayTeamName}</span>
             </div>
@@ -1686,6 +1899,11 @@ function createPlayoffCardHTML(match) {
     const violations = validateMatch(match);
     const hasAlert = violations.length > 0;
     
+    const homeShieldUrl = getTeamShield(match.homeTeam);
+    const awayShieldUrl = getTeamShield(match.awayTeam);
+    const homeShieldHTML = (!isPlaceholderHome && homeShieldUrl) ? `<img class="team-shield playoff-shield" src="${homeShieldUrl}" alt="" onerror="this.style.display='none'">` : '';
+    const awayShieldHTML = (!isPlaceholderAway && awayShieldUrl) ? `<img class="team-shield playoff-shield" src="${awayShieldUrl}" alt="" onerror="this.style.display='none'">` : '';
+    
     card.innerHTML = `
         <div class="playoff-card-info">
             <span>ID: ${match.id}</span>
@@ -1693,11 +1911,17 @@ function createPlayoffCardHTML(match) {
             ${hasAlert ? `<span class="warning-indicator rest" title="${violations.map(v => v.message).join('\n')}" style="width: 14px; height: 14px; font-size: 0.55rem;">⚠️</span>` : ''}
         </div>
         <div class="playoff-card-team ${isHomeWinner ? 'winner' : ''} ${isCompleted && !isHomeWinner ? 'loser' : ''}">
-            <span class="team-name" title="${homeName}">${isPlaceholderHome ? match.homeTeam : `[${match.homeTeam}] ${homeName}`}</span>
+            <div class="playoff-team-identity">
+                ${homeShieldHTML}
+                <span class="team-name" title="${homeName}">${isPlaceholderHome ? match.homeTeam : `[${match.homeTeam}] ${homeName}`}</span>
+            </div>
             <span class="score">${homeScoreText}</span>
         </div>
         <div class="playoff-card-team ${isAwayWinner ? 'winner' : ''} ${isCompleted && !isAwayWinner ? 'loser' : ''}">
-            <span class="team-name" title="${awayName}">${isPlaceholderAway ? match.awayTeam : `[${match.awayTeam}] ${awayName}`}</span>
+            <div class="playoff-team-identity">
+                ${awayShieldHTML}
+                <span class="team-name" title="${awayName}">${isPlaceholderAway ? match.awayTeam : `[${match.awayTeam}] ${awayName}`}</span>
+            </div>
             <span class="score">${awayScoreText}</span>
         </div>
     `;

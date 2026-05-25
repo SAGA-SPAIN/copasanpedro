@@ -151,6 +151,16 @@
 
         <!-- TAB 3: CALENDAR -->
         <section id="tab-calendar" class="tab-pane">
+            <!-- Print Header -->
+            <div class="print-header-only" style="display: none;">
+                <div style="display: flex; align-items: center; gap: 1.5rem; border-bottom: 2px solid #000; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                    <img src="https://www.copasanpedro.es/wp-content/uploads/2026/03/logocopasp.png" alt="Logo" style="height: 60px;">
+                    <div>
+                        <h1 style="margin: 0; font-size: 1.8rem; color: #000; font-family: 'Bebas Neue', sans-serif; letter-spacing: 1px;">78ª COPA SAN PEDRO 2026</h1>
+                        <h3 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #444; font-family: 'Montserrat', sans-serif;" id="print-subtitle">Calendario de Partidos</h3>
+                    </div>
+                </div>
+            </div>
             <div class="calendar-layout">
                 <!-- Sidebar Filters -->
                 <aside class="calendar-sidebar">
@@ -212,6 +222,21 @@
                             <button class="btn-toggle active" id="view-mode-list">Lista</button>
                             <button class="btn-toggle" id="view-mode-calendar">Calendario Visual</button>
                         </div>
+                        
+                        <div class="calendar-grouping-container" id="calendar-grouping-container" style="display: flex; align-items: center; gap: 0.5rem;">
+                            <label for="calendar-grouping-mode" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;">Agrupar por:</label>
+                            <select id="calendar-grouping-mode" class="form-control" style="width: auto; padding: 0.25rem 0.5rem; font-size: 0.85rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.1); color: var(--text-main); border: 1px solid var(--border-color);">
+                                <option value="date" selected>Fecha</option>
+                                <option value="round">Jornada</option>
+                                <option value="group">Grupo</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-secondary" id="btn-download-pdf" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.8rem; font-size: 0.85rem; border-radius: var(--radius-sm); background: var(--primary); color: #000; font-weight: 600; border: none; cursor: pointer; transition: var(--transition);">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            <span>Descargar PDF</span>
+                        </button>
+
                         <div class="calendar-nav-controls hidden" id="calendar-month-nav">
                             <button class="btn-nav" id="btn-prev-month">&lt;</button>
                             <h3 id="calendar-month-title">Junio 2026</h3>
