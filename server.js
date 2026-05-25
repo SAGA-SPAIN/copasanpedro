@@ -679,7 +679,7 @@ function generateDefaultState() {
         "homeScore": null,
         "awayScore": null,
         "date": "2026-06-09",
-        "time": "20:00",
+        "time": "21:00",
         "venue": "Polideportivo El Oms Mutxamel",
         "status": "pending",
         "zone": "provincia"
@@ -739,7 +739,7 @@ function generateDefaultState() {
         "homeScore": null,
         "awayScore": null,
         "date": "2026-06-25",
-        "time": "20:00",
+        "time": "21:00",
         "venue": "Polideportivo El Oms Mutxamel",
         "status": "pending",
         "zone": "provincia"

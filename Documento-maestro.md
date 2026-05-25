@@ -92,7 +92,7 @@ El calendario se organiza de forma que se juegan **3 partidos diarios** en los d
   - Grupo D: Alicante Football Academy vs Atletico San Blas (`D-R3-C3vC6`)
   - Grupo D: Betis Florida vs Lacross Babel (`D-R3-C13vC12`)
 
-### Fase Provincia (Martes, Jueves - 20:00)
+### Fase Provincia (Martes, Jueves - 20:00, partidos de local de Monnegre a las 21:00)
 - **Jornada 1:**
   - Grupo E: Partido 1 (Martes 2 Jun), Partido 2 (Jueves 4 Jun)
   - Grupo F: Partido 1 (Martes 2 Jun), Partido 2 (Jueves 4 Jun)

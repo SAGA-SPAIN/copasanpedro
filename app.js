@@ -523,7 +523,7 @@ function generateInitialSchedule() {
         const pIdx = match.pairIdx;
         
         match.date = matchDateAssignments[g][r][pIdx];
-        match.time = match.zone === 'capital' ? '20:30' : '20:00';
+        match.time = match.zone === 'capital' ? '20:30' : (match.homeTeam === 'P1' ? '21:00' : '20:00');
         match.venue = ''; // Empty string, resolved dynamically by getMatchVenue
         
         delete match.pairIdx; // clean up temporary property
