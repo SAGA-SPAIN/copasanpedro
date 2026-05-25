@@ -24,11 +24,7 @@
             </div>
             
             <nav class="app-nav">
-                <button class="nav-btn active" data-tab="dashboard" id="nav-dashboard">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
-                    <span>Dashboard</span>
-                </button>
-                <button class="nav-btn" data-tab="presentation" id="nav-presentation">
+                <button class="nav-btn active" data-tab="presentation" id="nav-presentation">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg>
                     <span>Presentación</span>
                 </button>
@@ -63,62 +59,8 @@
     </header>
 
     <main class="main-content">
-        <!-- TAB 1: DASHBOARD -->
-        <section id="tab-dashboard" class="tab-pane active">
-            <div class="dashboard-grid">
-                <!-- Welcome & Summary Card -->
-                <div class="card welcome-card col-span-3">
-                    <div class="welcome-content">
-                        <h2>Panel General del Torneo</h2>
-                        <p>Gestiona los grupos, partidos, resultados y las eliminatorias de la Copa San Pedro 2026. El sistema vigila el cumplimiento de las reglas de negocio (descanso de equipos y límite de partidos diarios) de manera dinámica.</p>
-                        <div class="dashboard-stats">
-                            <div class="stat-item">
-                                <span class="stat-val">24</span>
-                                <span class="stat-lbl">Equipos</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-val" id="stat-matches-total">--</span>
-                                <span class="stat-lbl">Partidos</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-val" id="stat-matches-completed">--</span>
-                                <span class="stat-lbl">Completados</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-val" id="stat-progress">--%</span>
-                                <span class="stat-lbl">Progreso</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Constraints Status Card -->
-                <div class="card constraints-card">
-                    <h3>Estado de Reglas de Negocio</h3>
-                    <ul class="constraints-list" id="dashboard-rules-list">
-                        <!-- Filled by JS -->
-                    </ul>
-                    <div class="info-alert mt-4">
-                        <svg class="icon-small" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                        <span>El calendario inicial se genera optimizando los descansos y la carga diaria de partidos.</span>
-                    </div>
-                </div>
-
-                <!-- Next Matches Card -->
-                <div class="card matches-summary-card col-span-2">
-                    <div class="card-header-actions">
-                        <h3>Partidos Recientes / Próximos</h3>
-                        <button class="btn btn-secondary btn-sm admin-only" id="btn-quick-simulate">Simular Resultados</button>
-                    </div>
-                    <div class="quick-matches-list" id="dashboard-matches-list">
-                        <!-- Filled by JS -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- TAB PRESENTATION -->
-        <section id="tab-presentation" class="tab-pane">
+        <section id="tab-presentation" class="tab-pane active">
             <div class="presentation-container">
                 <div class="slide-wrapper" id="slide-container">
                     <!-- Slide content rendered by JS -->

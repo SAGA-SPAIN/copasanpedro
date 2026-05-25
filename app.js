@@ -91,7 +91,7 @@ let state = {
         minRestDays: 2,
         blockedDates: []
     },
-    activeTab: 'dashboard',
+    activeTab: 'presentation',
     currentSlide: 0,
     currentCalendarMonth: 5, // June (0-indexed calendar is 5)
     currentCalendarYear: 2026,
@@ -1155,12 +1155,15 @@ function renderAll() {
 }
 
 function renderDashboard() {
+    const totalEl = document.getElementById('stat-matches-total');
+    if (!totalEl) return;
+    
     // 1. Stats
     const totalMatches = state.matches.length;
     const completedMatches = state.matches.filter(m => m.status === 'completed').length;
     const progress = totalMatches > 0 ? Math.round((completedMatches / totalMatches) * 100) : 0;
     
-    document.getElementById('stat-matches-total').innerText = totalMatches;
+    totalEl.innerText = totalMatches;
     document.getElementById('stat-matches-completed').innerText = completedMatches;
     document.getElementById('stat-progress').innerText = `${progress}%`;
     
@@ -2364,45 +2367,55 @@ const SLIDES_DATA = [
     {
         title: "Fechas Clave y Pausas",
         content: `
+            <div style="background: rgba(254, 189, 1, 0.1); border-left: 4px solid var(--primary); padding: 0.75rem 1rem; border-radius: 4px; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.4; color: var(--text-main);">
+                <strong>Ajuste de Fechas y Descanso:</strong> Debido a que hay equipos que juegan la fase eliminatoria (playoffs), se han modificado y adaptado las fechas para distanciar los partidos entre Cuartos de Final, Semifinales, Finales y la Gran Final. Esto garantiza descansos más prolongados y equitativos para las plantillas.
+            </div>
             <p>El calendario se ha estructurado para respetar días festivos locales y coordinarse con grandes eventos deportivos:</p>
             <div class="timeline-container">
-                <div class="timeline-event">
+                <div class="timeline-event" style="width: 15%;">
                     <div class="timeline-node">1</div>
                     <div class="timeline-info">
-                        <span class="date">1 Jun</span>
+                        <span class="date">1/9 Jun</span>
                         <span class="label">Inicio Torneo</span>
                     </div>
                 </div>
-                <div class="timeline-event">
+                <div class="timeline-event" style="width: 15%;">
                     <div class="timeline-node blocked">M</div>
                     <div class="timeline-info">
                         <span class="date">15 y 27 Jun</span>
                         <span class="label">Pausa Mundial</span>
                     </div>
                 </div>
-                <div class="timeline-event">
+                <div class="timeline-event" style="width: 15%;">
                     <div class="timeline-node blocked">H</div>
                     <div class="timeline-info">
                         <span class="date">20-24 Jun</span>
                         <span class="label">Hogueras</span>
                     </div>
                 </div>
-                <div class="timeline-event">
+                <div class="timeline-event" style="width: 15%;">
                     <div class="timeline-node">CF</div>
                     <div class="timeline-info">
-                        <span class="date">26-29 Jun</span>
+                        <span class="date">29 Jun - 1 Jul</span>
                         <span class="label">Cuartos Final</span>
                     </div>
                 </div>
-                <div class="timeline-event">
+                <div class="timeline-event" style="width: 15%;">
+                    <div class="timeline-node">SF</div>
+                    <div class="timeline-info">
+                        <span class="date">6-8 Jul</span>
+                        <span class="label">Semifinales</span>
+                    </div>
+                </div>
+                <div class="timeline-event" style="width: 15%;">
                     <div class="timeline-node">F</div>
                     <div class="timeline-info">
-                        <span class="date">13-17 Jul</span>
-                        <span class="label">Finales</span>
+                        <span class="date">10 Jul / 17 Jul</span>
+                        <span class="label">Finales / GF</span>
                     </div>
                 </div>
             </div>
-            <ul class="slide-bullets" style="margin-top: 2rem;">
+            <ul class="slide-bullets" style="margin-top: 1.5rem;">
                 <li><strong>Coordinación Mundial de España:</strong> Pausas en días clave de la fase de grupos para evitar competencia televisiva y de asistencia.</li>
                 <li><strong>Festividad de Hogueras:</strong> Parón completo del 20 al 24 de junio para permitir la participación festiva de Alicante.</li>
             </ul>
@@ -2504,34 +2517,34 @@ const SLIDES_DATA = [
     {
         title: "Fase Final y Eliminatorias",
         content: `
-            <p>Estructura de cruces directos que conduce a la unificación del torneo:</p>
+            <p>Estructura de cruces directos que conduce a la unificación del torneo (reajustada para garantizar descansos óptimos):</p>
             <div class="infographic-row">
                 <div class="info-card">
                     <h4>Playoffs Capital</h4>
                     <p>Clasifican los <strong>2 primeros</strong> de los Grupos A, B, C y D.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Cuartos (6 y 8 Jul):</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Cuartos (29 Jun y 1 Jul):</p>
                     <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; line-height: 1.2;">
                         CF1: 1º Grupo A vs 2º Grupo C<br>
                         CF2: 1º Grupo B vs 2º Grupo D<br>
                         CF3: 1º Grupo C vs 2º Grupo A<br>
                         CF4: 1º Grupo D vs 2º Grupo B
                     </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Semifinales (10 y 13 Jul):</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Semifinales (6 y 8 Jul):</p>
                     <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; line-height: 1.2;">
-                        SF1: Ganador CF1 vs Ganador CF2<br>
-                        SF2: Ganador CF3 vs Ganador CF4
+                        SF-C1: Ganador CF1 vs Ganador CF2<br>
+                        SF-C2: Ganador CF3 vs Ganador CF4
                     </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Final Capital: 15 de Julio (Neutral)</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Final Capital: 10 de Julio (Neutral)</p>
                 </div>
                 <div class="info-card">
                     <h4>Playoffs Provincia</h4>
                     <p>Clasifican los <strong>2 primeros</strong> de los Grupos E y F.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Semifinales (7 y 9 Jul):</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Semifinales (6 y 8 Jul):</p>
                     <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; line-height: 1.2;">
-                        SF1: 1º Grupo E vs 2º Grupo F<br>
-                        SF2: 1º Grupo F vs 2º Grupo E
+                        SF-P1: 1º Grupo E vs 2º Grupo F<br>
+                        SF-P2: 1º Grupo F vs 2º Grupo E
                     </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Final Provincia: 14 de Julio (Neutral)</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Final Provincia: 10 de Julio (Neutral)</p>
                 </div>
                 <div class="info-card" style="border: 1px solid var(--primary); background: rgba(254, 189, 1, 0.02);">
                     <h4>Gran Final Absoluta</h4>

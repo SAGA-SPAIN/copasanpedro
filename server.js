@@ -935,7 +935,7 @@ function generateDefaultState() {
         teams,
         matches,
         settings,
-        activeTab: 'dashboard',
+        activeTab: 'presentation',
         currentSlide: 0,
         currentCalendarMonth: 5,
         currentCalendarYear: 2026,
