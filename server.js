@@ -72,160 +72,869 @@ function saveStateToFile(state) {
 // Generate default tournament state matching client initialization
 function generateDefaultState() {
     const teams = [
-        { id: 'C1', name: 'C1', zone: 'capital', group: 'B' },
-        { id: 'C2', name: 'C2', zone: 'capital', group: 'A' },
-        { id: 'C3', name: 'C3', zone: 'capital', group: 'D' },
-        { id: 'C4', name: 'C4', zone: 'capital', group: 'A' },
-        { id: 'C5', name: 'C5', zone: 'capital', group: 'C' },
-        { id: 'C6', name: 'C6', zone: 'capital', group: 'D' },
-        { id: 'C7', name: 'C7', zone: 'capital', group: 'A' },
-        { id: 'C8', name: 'C8', zone: 'capital', group: 'C' },
-        { id: 'C9', name: 'C9', zone: 'capital', group: 'B' },
-        { id: 'C10', name: 'C10', zone: 'capital', group: 'C' },
-        { id: 'C11', name: 'C11', zone: 'capital', group: 'B' },
-        { id: 'C12', name: 'C12', zone: 'capital', group: 'D' },
-        { id: 'C13', name: 'C13', zone: 'capital', group: 'D' },
-        { id: 'C14', name: 'C14', zone: 'capital', group: 'B' },
-        { id: 'C15', name: 'C15', zone: 'capital', group: 'A' },
-        { id: 'C16', name: 'C16', zone: 'capital', group: 'C' },
-        { id: 'P1', name: 'P1', zone: 'provincia', group: 'E' },
-        { id: 'P2', name: 'P2', zone: 'provincia', group: 'F' },
-        { id: 'P3', name: 'P3', zone: 'provincia', group: 'E' },
-        { id: 'P4', name: 'P4', zone: 'provincia', group: 'F' },
-        { id: 'P5', name: 'P5', zone: 'provincia', group: 'E' },
-        { id: 'P6', name: 'P6', zone: 'provincia', group: 'F' },
-        { id: 'P7', name: 'P7', zone: 'provincia', group: 'F' },
-        { id: 'P8', name: 'P8', zone: 'provincia', group: 'E' }
-    ];
+  {
+    "id": "C1",
+    "name": "CF BARRIO SAN GABRIEL",
+    "zone": "capital",
+    "group": "B"
+  },
+  {
+    "id": "C2",
+    "name": "VIASPORT MARISTAS",
+    "zone": "capital",
+    "group": "A"
+  },
+  {
+    "id": "C3",
+    "name": "ACFC ACADEMY",
+    "zone": "capital",
+    "group": "D"
+  },
+  {
+    "id": "C4",
+    "name": "MEDITERRÁNEO-PEÑA EL BOTIJO",
+    "zone": "capital",
+    "group": "A"
+  },
+  {
+    "id": "C5",
+    "name": "CD VILLAFRANQUEZA",
+    "zone": "capital",
+    "group": "C"
+  },
+  {
+    "id": "C6",
+    "name": "ATLETICO SAN BLAS",
+    "zone": "capital",
+    "group": "D"
+  },
+  {
+    "id": "C7",
+    "name": "SCD SAN BLAS",
+    "zone": "capital",
+    "group": "A"
+  },
+  {
+    "id": "C8",
+    "name": "CLUB ATLÉTICO EL PRINCIPIO",
+    "zone": "capital",
+    "group": "C"
+  },
+  {
+    "id": "C9",
+    "name": "INTER LEUKA-DUAL LINK",
+    "zone": "capital",
+    "group": "B"
+  },
+  {
+    "id": "C10",
+    "name": "SALESIANOS BY DICKENS",
+    "zone": "capital",
+    "group": "C"
+  },
+  {
+    "id": "C11",
+    "name": "ALICANTE SPORT ACADEMY",
+    "zone": "capital",
+    "group": "B"
+  },
+  {
+    "id": "C12",
+    "name": "LACROSS BABEL",
+    "zone": "capital",
+    "group": "D"
+  },
+  {
+    "id": "C13",
+    "name": "BETIS FLORIDA",
+    "zone": "capital",
+    "group": "D"
+  },
+  {
+    "id": "C14",
+    "name": "CD CAMPELLO- CASA SALVI",
+    "zone": "capital",
+    "group": "B"
+  },
+  {
+    "id": "C15",
+    "name": "PLAYAS ALICANTE",
+    "zone": "capital",
+    "group": "A"
+  },
+  {
+    "id": "C16",
+    "name": "ALICANTE CITY CF",
+    "zone": "capital",
+    "group": "C"
+  },
+  {
+    "id": "P1",
+    "name": "MONEGRE MUTXAMEL",
+    "zone": "provincia",
+    "group": "F"
+  },
+  {
+    "id": "P2",
+    "name": "FUNDACION CD CAMPELLO",
+    "zone": "provincia",
+    "group": "F"
+  },
+  {
+    "id": "P3",
+    "name": "JOVE ESPAÑOL SAN VICENTE",
+    "zone": "provincia",
+    "group": "E"
+  },
+  {
+    "id": "P4",
+    "name": "VILLAJOYOSA",
+    "zone": "provincia",
+    "group": "F"
+  },
+  {
+    "id": "P5",
+    "name": "EL ALET",
+    "zone": "provincia",
+    "group": "E"
+  },
+  {
+    "id": "P6",
+    "name": "ATH TORRELLANO",
+    "zone": "provincia",
+    "group": "E"
+  },
+  {
+    "id": "P7",
+    "name": "GIMNASTIC SAN VICENTE",
+    "zone": "provincia",
+    "group": "E"
+  },
+  {
+    "id": "P8",
+    "name": "MUTXAMEL CF",
+    "zone": "provincia",
+    "group": "F"
+  }
+];
 
-    const blockedDates = [
-        "2026-06-15",
-        "2026-06-27",
-        "2026-06-20",
-        "2026-06-21",
-        "2026-06-22",
-        "2026-06-23",
-        "2026-06-24"
-    ];
+    const matches = [
+  {
+    "id": "A-R1-C7vC2",
+    "stage": "group",
+    "group": "A",
+    "round": 1,
+    "homeTeam": "C7",
+    "awayTeam": "C2",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-01",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "A-R1-C15vC4",
+    "stage": "group",
+    "group": "A",
+    "round": 1,
+    "homeTeam": "C15",
+    "awayTeam": "C4",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-03",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "A-R2-C4vC7",
+    "stage": "group",
+    "group": "A",
+    "round": 2,
+    "homeTeam": "C4",
+    "awayTeam": "C7",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-08",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "A-R2-C2vC15",
+    "stage": "group",
+    "group": "A",
+    "round": 2,
+    "homeTeam": "C2",
+    "awayTeam": "C15",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-10",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "A-R3-C7vC15",
+    "stage": "group",
+    "group": "A",
+    "round": 3,
+    "homeTeam": "C7",
+    "awayTeam": "C15",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-17",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "A-R3-C4vC2",
+    "stage": "group",
+    "group": "A",
+    "round": 3,
+    "homeTeam": "C4",
+    "awayTeam": "C2",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-19",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "B-R1-C9vC11",
+    "stage": "group",
+    "group": "B",
+    "round": 1,
+    "homeTeam": "C9",
+    "awayTeam": "C11",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-01",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "B-R1-C1vC14",
+    "stage": "group",
+    "group": "B",
+    "round": 1,
+    "homeTeam": "C1",
+    "awayTeam": "C14",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-03",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "B-R2-C14vC9",
+    "stage": "group",
+    "group": "B",
+    "round": 2,
+    "homeTeam": "C14",
+    "awayTeam": "C9",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-08",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "B-R2-C11vC1",
+    "stage": "group",
+    "group": "B",
+    "round": 2,
+    "homeTeam": "C11",
+    "awayTeam": "C1",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-10",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "B-R3-C1vC9",
+    "stage": "group",
+    "group": "B",
+    "round": 3,
+    "homeTeam": "C1",
+    "awayTeam": "C9",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-17",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "B-R3-C11vC14",
+    "stage": "group",
+    "group": "B",
+    "round": 3,
+    "homeTeam": "C11",
+    "awayTeam": "C14",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-19",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "C-R1-C5vC16",
+    "stage": "group",
+    "group": "C",
+    "round": 1,
+    "homeTeam": "C5",
+    "awayTeam": "C16",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-01",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "C-R1-C8vC10",
+    "stage": "group",
+    "group": "C",
+    "round": 1,
+    "homeTeam": "C8",
+    "awayTeam": "C10",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-05",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "C-R2-C10vC5",
+    "stage": "group",
+    "group": "C",
+    "round": 2,
+    "homeTeam": "C10",
+    "awayTeam": "C5",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-08",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "C-R2-C16vC8",
+    "stage": "group",
+    "group": "C",
+    "round": 2,
+    "homeTeam": "C16",
+    "awayTeam": "C8",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-12",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "C-R3-C8vC5",
+    "stage": "group",
+    "group": "C",
+    "round": 3,
+    "homeTeam": "C8",
+    "awayTeam": "C5",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-17",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "C-R3-C16vC10",
+    "stage": "group",
+    "group": "C",
+    "round": 3,
+    "homeTeam": "C16",
+    "awayTeam": "C10",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-26",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "D-R1-C3vC12",
+    "stage": "group",
+    "group": "D",
+    "round": 1,
+    "homeTeam": "C3",
+    "awayTeam": "C12",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-03",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "D-R1-C6vC13",
+    "stage": "group",
+    "group": "D",
+    "round": 1,
+    "homeTeam": "C6",
+    "awayTeam": "C13",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-05",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "D-R2-C13vC3",
+    "stage": "group",
+    "group": "D",
+    "round": 2,
+    "homeTeam": "C13",
+    "awayTeam": "C3",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-10",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "D-R2-C12vC6",
+    "stage": "group",
+    "group": "D",
+    "round": 2,
+    "homeTeam": "C12",
+    "awayTeam": "C6",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-12",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "D-R3-C3vC6",
+    "stage": "group",
+    "group": "D",
+    "round": 3,
+    "homeTeam": "C3",
+    "awayTeam": "C6",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-19",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "D-R3-C13vC12",
+    "stage": "group",
+    "group": "D",
+    "round": 3,
+    "homeTeam": "C13",
+    "awayTeam": "C12",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-26",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "capital"
+  },
+  {
+    "id": "E-R1-P3vP5",
+    "stage": "group",
+    "group": "E",
+    "round": 1,
+    "homeTeam": "P3",
+    "awayTeam": "P5",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-09",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "E-R1-P6vP7",
+    "stage": "group",
+    "group": "E",
+    "round": 1,
+    "homeTeam": "P6",
+    "awayTeam": "P7",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-11",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "E-R2-P7vP3",
+    "stage": "group",
+    "group": "E",
+    "round": 2,
+    "homeTeam": "P7",
+    "awayTeam": "P3",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-16",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "E-R2-P5vP6",
+    "stage": "group",
+    "group": "E",
+    "round": 2,
+    "homeTeam": "P5",
+    "awayTeam": "P6",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-18",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "E-R3-P3vP6",
+    "stage": "group",
+    "group": "E",
+    "round": 3,
+    "homeTeam": "P3",
+    "awayTeam": "P6",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-30",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "E-R3-P7vP5",
+    "stage": "group",
+    "group": "E",
+    "round": 3,
+    "homeTeam": "P7",
+    "awayTeam": "P5",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-02",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "F-R1-P1vP2",
+    "stage": "group",
+    "group": "F",
+    "round": 1,
+    "homeTeam": "P1",
+    "awayTeam": "P2",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-09",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "F-R1-P4vP8",
+    "stage": "group",
+    "group": "F",
+    "round": 1,
+    "homeTeam": "P4",
+    "awayTeam": "P8",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-11",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "F-R2-P8vP1",
+    "stage": "group",
+    "group": "F",
+    "round": 2,
+    "homeTeam": "P8",
+    "awayTeam": "P1",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-16",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "F-R2-P2vP4",
+    "stage": "group",
+    "group": "F",
+    "round": 2,
+    "homeTeam": "P2",
+    "awayTeam": "P4",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-18",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "F-R3-P1vP4",
+    "stage": "group",
+    "group": "F",
+    "round": 3,
+    "homeTeam": "P1",
+    "awayTeam": "P4",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-06-30",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "F-R3-P8vP2",
+    "stage": "group",
+    "group": "F",
+    "round": 3,
+    "homeTeam": "P8",
+    "awayTeam": "P2",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-02",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending",
+    "zone": "provincia"
+  },
+  {
+    "id": "CF1",
+    "stage": "playoffs",
+    "zone": "capital",
+    "round": "CF",
+    "homeTeam": "1º Grupo A",
+    "awayTeam": "2º Grupo C",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-06",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  },
+  {
+    "id": "CF2",
+    "stage": "playoffs",
+    "zone": "capital",
+    "round": "CF",
+    "homeTeam": "1º Grupo B",
+    "awayTeam": "2º Grupo D",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-06",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  },
+  {
+    "id": "CF3",
+    "stage": "playoffs",
+    "zone": "capital",
+    "round": "CF",
+    "homeTeam": "1º Grupo C",
+    "awayTeam": "2º Grupo A",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-08",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  },
+  {
+    "id": "CF4",
+    "stage": "playoffs",
+    "zone": "capital",
+    "round": "CF",
+    "homeTeam": "1º Grupo D",
+    "awayTeam": "2º Grupo B",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-08",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  },
+  {
+    "id": "SF-C1",
+    "stage": "playoffs",
+    "zone": "capital",
+    "round": "SF",
+    "homeTeam": "Ganador CF1",
+    "awayTeam": "Ganador CF2",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-13",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  },
+  {
+    "id": "SF-C2",
+    "stage": "playoffs",
+    "zone": "capital",
+    "round": "SF",
+    "homeTeam": "Ganador CF3",
+    "awayTeam": "Ganador CF4",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-13",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  },
+  {
+    "id": "Final-C",
+    "stage": "playoffs",
+    "zone": "capital",
+    "round": "F",
+    "homeTeam": "Ganador SF-C1",
+    "awayTeam": "Ganador SF-C2",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-17",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  },
+  {
+    "id": "SF-P1",
+    "stage": "playoffs",
+    "zone": "provincia",
+    "round": "SF",
+    "homeTeam": "1º Grupo E",
+    "awayTeam": "2º Grupo F",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-07",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  },
+  {
+    "id": "SF-P2",
+    "stage": "playoffs",
+    "zone": "provincia",
+    "round": "SF",
+    "homeTeam": "1º Grupo F",
+    "awayTeam": "2º Grupo E",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-09",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  },
+  {
+    "id": "Final-P",
+    "stage": "playoffs",
+    "zone": "provincia",
+    "round": "F",
+    "homeTeam": "Ganador SF-P1",
+    "awayTeam": "Ganador SF-P2",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-14",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  },
+  {
+    "id": "Gran-Final",
+    "stage": "playoffs",
+    "zone": "final",
+    "round": "GF",
+    "homeTeam": "Campeón Capital",
+    "awayTeam": "Campeón Provincia",
+    "homeScore": null,
+    "awayScore": null,
+    "date": "2026-07-24",
+    "time": "20:00",
+    "venue": "",
+    "status": "pending"
+  }
+];
 
-    const matches = [];
-    const groups = ['A', 'B', 'C', 'D', 'E', 'F'];
-    
-    groups.forEach(gId => {
-        const gTeams = teams.filter(t => t.group === gId);
-        const orderMap = {
-            'A': ['C7', 'C2', 'C15', 'C4'],
-            'B': ['C9', 'C11', 'C1', 'C14'],
-            'C': ['C5', 'C16', 'C8', 'C10'],
-            'D': ['C3', 'C12', 'C6', 'C13'],
-            'E': ['P3', 'P8', 'P1', 'P5'],
-            'F': ['P2', 'P7', 'P4', 'P6']
-        };
-        const sortedTeams = orderMap[gId].map(id => gTeams.find(t => t.id === id));
-        const roundPairs = [
-            [[0, 1], [2, 3]],
-            [[3, 0], [1, 2]],
-            [[0, 2], [3, 1]]
-        ];
-        
-        roundPairs.forEach((round, roundIdx) => {
-            const roundNum = roundIdx + 1;
-            round.forEach((pair, pairIdx) => {
-                matches.push({
-                    id: `${gId}-R${roundNum}-${sortedTeams[pair[0]].id}v${sortedTeams[pair[1]].id}`,
-                    stage: 'group',
-                    group: gId,
-                    round: roundNum,
-                    homeTeam: sortedTeams[pair[0]].id,
-                    awayTeam: sortedTeams[pair[1]].id,
-                    homeScore: null,
-                    awayScore: null,
-                    date: '',
-                    time: '20:00',
-                    venue: '',
-                    status: 'pending',
-                    zone: gId <= 'D' ? 'capital' : 'provincia',
-                    pairIdx: pairIdx
-                });
-            });
-        });
-    });
-
-    const matchDateAssignments = {
-        'A': {
-            1: { 0: '2026-06-01', 1: '2026-06-03' },
-            2: { 0: '2026-06-10', 1: '2026-06-12' },
-            3: { 0: '2026-06-26', 1: '2026-06-29' }
-        },
-        'B': {
-            1: { 0: '2026-06-01', 1: '2026-06-03' },
-            2: { 0: '2026-06-10', 1: '2026-06-12' },
-            3: { 0: '2026-06-26', 1: '2026-06-29' }
-        },
-        'C': {
-            1: { 0: '2026-06-05', 1: '2026-06-08' },
-            2: { 0: '2026-06-17', 1: '2026-06-19' },
-            3: { 0: '2026-07-01', 1: '2026-07-03' }
-        },
-        'D': {
-            1: { 0: '2026-06-05', 1: '2026-06-08' },
-            2: { 0: '2026-06-17', 1: '2026-06-19' },
-            3: { 0: '2026-07-01', 1: '2026-07-03' }
-        },
-        'E': {
-            1: { 0: '2026-06-02', 1: '2026-06-04' },
-            2: { 0: '2026-06-09', 1: '2026-06-11' },
-            3: { 0: '2026-06-16', 1: '2026-06-18' }
-        },
-        'F': {
-            1: { 0: '2026-06-02', 1: '2026-06-04' },
-            2: { 0: '2026-06-09', 1: '2026-06-11' },
-            3: { 0: '2026-06-16', 1: '2026-06-18' }
-        }
-    };
-
-    matches.forEach(match => {
-        const g = match.group;
-        const r = match.round;
-        const pIdx = match.pairIdx;
-        match.date = matchDateAssignments[g][r][pIdx];
-        match.time = '20:00';
-        match.venue = '';
-        delete match.pairIdx;
-    });
-
-    const capitalPlayoffs = [
-        { id: 'CF1', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo A', awayTeam: '2º Grupo C', homeScore: null, awayScore: null, date: '2026-07-06', time: '20:00', venue: '', status: 'pending' },
-        { id: 'CF2', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo B', awayTeam: '2º Grupo D', homeScore: null, awayScore: null, date: '2026-07-06', time: '20:00', venue: '', status: 'pending' },
-        { id: 'CF3', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo C', awayTeam: '2º Grupo A', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
-        { id: 'CF4', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo D', awayTeam: '2º Grupo B', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
-        { id: 'SF-C1', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF1', awayTeam: 'Ganador CF2', homeScore: null, awayScore: null, date: '2026-07-10', time: '20:00', venue: '', status: 'pending' },
-        { id: 'SF-C2', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF3', awayTeam: 'Ganador CF4', homeScore: null, awayScore: null, date: '2026-07-13', time: '20:00', venue: '', status: 'pending' },
-        { id: 'Final-C', stage: 'playoffs', zone: 'capital', round: 'F', homeTeam: 'Ganador SF-C1', awayTeam: 'Ganador SF-C2', homeScore: null, awayScore: null, date: '2026-07-15', time: '20:00', venue: '', status: 'pending' }
-    ];
-
-    const provinciaPlayoffs = [
-        { id: 'SF-P1', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo E', awayTeam: '2º Grupo F', homeScore: null, awayScore: null, date: '2026-07-07', time: '20:00', venue: '', status: 'pending' },
-        { id: 'SF-P2', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo F', awayTeam: '2º Grupo E', homeScore: null, awayScore: null, date: '2026-07-09', time: '20:00', venue: '', status: 'pending' },
-        { id: 'Final-P', stage: 'playoffs', zone: 'provincia', round: 'F', homeTeam: 'Ganador SF-P1', awayTeam: 'Ganador SF-P2', homeScore: null, awayScore: null, date: '2026-07-14', time: '20:00', venue: '', status: 'pending' }
-    ];
-
-    const grandFinal = [
-        { id: 'Gran-Final', stage: 'playoffs', zone: 'final', round: 'GF', homeTeam: 'Campeón Capital', awayTeam: 'Campeón Provincia', homeScore: null, awayScore: null, date: '2026-07-17', time: '20:00', venue: '', status: 'pending' }
-    ];
-
-    matches.push(...capitalPlayoffs, ...provinciaPlayoffs, ...grandFinal);
+    const settings = {
+  "allowWeekends": false,
+  "useMultisede": true,
+  "maxMatchesPerDay": 2,
+  "minRestDays": 2,
+  "blockedDates": [
+    "2026-06-15",
+    "2026-06-27",
+    "2026-06-20",
+    "2026-06-21",
+    "2026-06-22",
+    "2026-06-23",
+    "2026-06-24"
+  ]
+};
 
     return {
         teams,
         matches,
-        settings: {
-            allowWeekends: false,
-            useMultisede: true,
-            maxMatchesPerDay: 2,
-            minRestDays: 2,
-            blockedDates
-        },
+        settings,
         activeTab: 'dashboard',
         currentSlide: 0,
         currentCalendarMonth: 5,

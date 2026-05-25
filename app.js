@@ -3,32 +3,32 @@
 // --- 1. BASE DATABASE & INITIAL STATE ---
 const INITIAL_TEAMS = [
     // Capital (Grupos A-D)
-    { id: 'C1', name: 'C1', zone: 'capital', group: 'B' },
-    { id: 'C2', name: 'C2', zone: 'capital', group: 'A' },
-    { id: 'C3', name: 'C3', zone: 'capital', group: 'D' },
-    { id: 'C4', name: 'C4', zone: 'capital', group: 'A' },
-    { id: 'C5', name: 'C5', zone: 'capital', group: 'C' },
-    { id: 'C6', name: 'C6', zone: 'capital', group: 'D' },
-    { id: 'C7', name: 'C7', zone: 'capital', group: 'A' },
-    { id: 'C8', name: 'C8', zone: 'capital', group: 'C' },
-    { id: 'C9', name: 'C9', zone: 'capital', group: 'B' },
-    { id: 'C10', name: 'C10', zone: 'capital', group: 'C' },
-    { id: 'C11', name: 'C11', zone: 'capital', group: 'B' },
-    { id: 'C12', name: 'C12', zone: 'capital', group: 'D' },
-    { id: 'C13', name: 'C13', zone: 'capital', group: 'D' },
-    { id: 'C14', name: 'C14', zone: 'capital', group: 'B' },
-    { id: 'C15', name: 'C15', zone: 'capital', group: 'A' },
-    { id: 'C16', name: 'C16', zone: 'capital', group: 'C' },
+    { id: 'C1', name: 'CF BARRIO SAN GABRIEL', zone: 'capital', group: 'B' },
+    { id: 'C2', name: 'VIASPORT MARISTAS', zone: 'capital', group: 'A' },
+    { id: 'C3', name: 'ACFC ACADEMY', zone: 'capital', group: 'D' },
+    { id: 'C4', name: 'MEDITERRÁNEO-PEÑA EL BOTIJO', zone: 'capital', group: 'A' },
+    { id: 'C5', name: 'CD VILLAFRANQUEZA', zone: 'capital', group: 'C' },
+    { id: 'C6', name: 'ATLETICO SAN BLAS', zone: 'capital', group: 'D' },
+    { id: 'C7', name: 'SCD SAN BLAS', zone: 'capital', group: 'A' },
+    { id: 'C8', name: 'CLUB ATLÉTICO EL PRINCIPIO', zone: 'capital', group: 'C' },
+    { id: 'C9', name: 'INTER LEUKA-DUAL LINK', zone: 'capital', group: 'B' },
+    { id: 'C10', name: 'SALESIANOS BY DICKENS', zone: 'capital', group: 'C' },
+    { id: 'C11', name: 'ALICANTE SPORT ACADEMY', zone: 'capital', group: 'B' },
+    { id: 'C12', name: 'LACROSS BABEL', zone: 'capital', group: 'D' },
+    { id: 'C13', name: 'BETIS FLORIDA', zone: 'capital', group: 'D' },
+    { id: 'C14', name: 'CD CAMPELLO- CASA SALVI', zone: 'capital', group: 'B' },
+    { id: 'C15', name: 'PLAYAS ALICANTE', zone: 'capital', group: 'A' },
+    { id: 'C16', name: 'ALICANTE CITY CF', zone: 'capital', group: 'C' },
 
     // Provincia (Grupos E-F)
-    { id: 'P1', name: 'P1', zone: 'provincia', group: 'E' },
-    { id: 'P2', name: 'P2', zone: 'provincia', group: 'F' },
-    { id: 'P3', name: 'P3', zone: 'provincia', group: 'E' },
-    { id: 'P4', name: 'P4', zone: 'provincia', group: 'F' },
-    { id: 'P5', name: 'P5', zone: 'provincia', group: 'E' },
-    { id: 'P6', name: 'P6', zone: 'provincia', group: 'F' },
-    { id: 'P7', name: 'P7', zone: 'provincia', group: 'F' },
-    { id: 'P8', name: 'P8', zone: 'provincia', group: 'E' }
+    { id: 'P1', name: 'MONEGRE MUTXAMEL', zone: 'provincia', group: 'F' },
+    { id: 'P2', name: 'FUNDACION CD CAMPELLO', zone: 'provincia', group: 'F' },
+    { id: 'P3', name: 'JOVE ESPAÑOL SAN VICENTE', zone: 'provincia', group: 'E' },
+    { id: 'P4', name: 'VILLAJOYOSA', zone: 'provincia', group: 'F' },
+    { id: 'P5', name: 'EL ALET', zone: 'provincia', group: 'E' },
+    { id: 'P6', name: 'ATH TORRELLANO', zone: 'provincia', group: 'E' },
+    { id: 'P7', name: 'GIMNASTIC SAN VICENTE', zone: 'provincia', group: 'E' },
+    { id: 'P8', name: 'MUTXAMEL CF', zone: 'provincia', group: 'F' }
 ];
 
 // Default Blocked Dates
@@ -406,8 +406,8 @@ function generateInitialSchedule() {
             'B': ['C9', 'C11', 'C1', 'C14'],
             'C': ['C5', 'C16', 'C8', 'C10'],
             'D': ['C3', 'C12', 'C6', 'C13'],
-            'E': ['P3', 'P8', 'P1', 'P5'],
-            'F': ['P2', 'P7', 'P4', 'P6']
+            'E': ['P3', 'P5', 'P6', 'P7'],
+            'F': ['P1', 'P2', 'P4', 'P8']
         };
         
         const sortedTeams = orderMap[gId].map(id => gTeams.find(t => t.id === id));
@@ -442,37 +442,54 @@ function generateInitialSchedule() {
         });
     });
     
+    // Apply home/away and id swaps for the matches that deviate from standard template
+    const swaps = {
+        'B-R3-C9vC1': { newId: 'B-R3-C1vC9', home: 'C1', away: 'C9' },
+        'B-R3-C14vC11': { newId: 'B-R3-C11vC14', home: 'C11', away: 'C14' },
+        'C-R3-C5vC8': { newId: 'C-R3-C8vC5', home: 'C8', away: 'C5' },
+        'C-R3-C10vC16': { newId: 'C-R3-C16vC10', home: 'C16', away: 'C10' }
+    };
+    
+    matchesToSchedule.forEach(m => {
+        if (swaps[m.id]) {
+            const s = swaps[m.id];
+            m.id = s.newId;
+            m.homeTeam = s.home;
+            m.awayTeam = s.away;
+        }
+    });
+
     // Deterministic Date mapping for each group stage round (no two matches of same group/round on the same day)
     const matchDateAssignments = {
         'A': {
             1: { 0: '2026-06-01', 1: '2026-06-03' },
-            2: { 0: '2026-06-10', 1: '2026-06-12' },
-            3: { 0: '2026-06-26', 1: '2026-06-29' }
+            2: { 0: '2026-06-08', 1: '2026-06-10' },
+            3: { 0: '2026-06-17', 1: '2026-06-19' }
         },
         'B': {
             1: { 0: '2026-06-01', 1: '2026-06-03' },
-            2: { 0: '2026-06-10', 1: '2026-06-12' },
-            3: { 0: '2026-06-26', 1: '2026-06-29' }
+            2: { 0: '2026-06-08', 1: '2026-06-10' },
+            3: { 0: '2026-06-17', 1: '2026-06-19' }
         },
         'C': {
-            1: { 0: '2026-06-05', 1: '2026-06-08' },
-            2: { 0: '2026-06-17', 1: '2026-06-19' },
-            3: { 0: '2026-07-01', 1: '2026-07-03' }
+            1: { 0: '2026-06-01', 1: '2026-06-05' },
+            2: { 0: '2026-06-08', 1: '2026-06-12' },
+            3: { 0: '2026-06-17', 1: '2026-06-26' }
         },
         'D': {
-            1: { 0: '2026-06-05', 1: '2026-06-08' },
-            2: { 0: '2026-06-17', 1: '2026-06-19' },
-            3: { 0: '2026-07-01', 1: '2026-07-03' }
+            1: { 0: '2026-06-03', 1: '2026-06-05' },
+            2: { 0: '2026-06-10', 1: '2026-06-12' },
+            3: { 0: '2026-06-19', 1: '2026-06-26' }
         },
         'E': {
-            1: { 0: '2026-06-02', 1: '2026-06-04' },
-            2: { 0: '2026-06-09', 1: '2026-06-11' },
-            3: { 0: '2026-06-16', 1: '2026-06-18' }
+            1: { 0: '2026-06-09', 1: '2026-06-11' },
+            2: { 0: '2026-06-16', 1: '2026-06-18' },
+            3: { 0: '2026-06-30', 1: '2026-07-02' }
         },
         'F': {
-            1: { 0: '2026-06-02', 1: '2026-06-04' },
-            2: { 0: '2026-06-09', 1: '2026-06-11' },
-            3: { 0: '2026-06-16', 1: '2026-06-18' }
+            1: { 0: '2026-06-09', 1: '2026-06-11' },
+            2: { 0: '2026-06-16', 1: '2026-06-18' },
+            3: { 0: '2026-06-30', 1: '2026-07-02' }
         }
     };
     
@@ -497,8 +514,8 @@ function generateInitialSchedule() {
 function generatePlayoffsSkeleton() {
     // Generate Capital Playoffs Skeleton
     // Cuartos de Final (CF1, CF2, CF3, CF4) - 6 and 8 Jul
-    // Semifinales (SF-C1, SF-C2) - 10 Jul and 13 Jul
-    // Final Capital - 15 Jul (moved to 15 Jul in previous request to make sure Semifinales are on different days)
+    // Semifinales (SF-C1, SF-C2) - 13 Jul
+    // Final Capital - 17 Jul
     
     const capitalPlayoffs = [
         { id: 'CF1', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo A', awayTeam: '2º Grupo C', homeScore: null, awayScore: null, date: '2026-07-06', time: '20:00', venue: '', status: 'pending' },
@@ -506,10 +523,10 @@ function generatePlayoffsSkeleton() {
         { id: 'CF3', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo C', awayTeam: '2º Grupo A', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
         { id: 'CF4', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo D', awayTeam: '2º Grupo B', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
         
-        { id: 'SF-C1', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF1', awayTeam: 'Ganador CF2', homeScore: null, awayScore: null, date: '2026-07-10', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-C1', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF1', awayTeam: 'Ganador CF2', homeScore: null, awayScore: null, date: '2026-07-13', time: '20:00', venue: '', status: 'pending' },
         { id: 'SF-C2', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF3', awayTeam: 'Ganador CF4', homeScore: null, awayScore: null, date: '2026-07-13', time: '20:00', venue: '', status: 'pending' },
         
-        { id: 'Final-C', stage: 'playoffs', zone: 'capital', round: 'F', homeTeam: 'Ganador SF-C1', awayTeam: 'Ganador SF-C2', homeScore: null, awayScore: null, date: '2026-07-15', time: '20:00', venue: '', status: 'pending' }
+        { id: 'Final-C', stage: 'playoffs', zone: 'capital', round: 'F', homeTeam: 'Ganador SF-C1', awayTeam: 'Ganador SF-C2', homeScore: null, awayScore: null, date: '2026-07-17', time: '20:00', venue: '', status: 'pending' }
     ];
 
     // Provincia Playoffs Skeleton
@@ -522,9 +539,9 @@ function generatePlayoffsSkeleton() {
         { id: 'Final-P', stage: 'playoffs', zone: 'provincia', round: 'F', homeTeam: 'Ganador SF-P1', awayTeam: 'Ganador SF-P2', homeScore: null, awayScore: null, date: '2026-07-14', time: '20:00', venue: '', status: 'pending' }
     ];
 
-    // Gran Final Absoluta - 17 Jul
+    // Gran Final Absoluta - 24 Jul
     const grandFinal = [
-        { id: 'Gran-Final', stage: 'playoffs', zone: 'final', round: 'GF', homeTeam: 'Campeón Capital', awayTeam: 'Campeón Provincia', homeScore: null, awayScore: null, date: '2026-07-17', time: '20:00', venue: '', status: 'pending' }
+        { id: 'Gran-Final', stage: 'playoffs', zone: 'final', round: 'GF', homeTeam: 'Campeón Capital', awayTeam: 'Campeón Provincia', homeScore: null, awayScore: null, date: '2026-07-24', time: '20:00', venue: '', status: 'pending' }
     ];
 
     state.matches.push(...capitalPlayoffs, ...provinciaPlayoffs, ...grandFinal);
