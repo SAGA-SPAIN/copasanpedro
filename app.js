@@ -554,13 +554,13 @@ function generatePlayoffsSkeleton() {
     ];
 
     // Provincia Playoffs Skeleton
-    // Semifinales (SF-P1, SF-P2) - 30 Jun, 2 Jul
-    // Final Provincia - 9 Jul
+    // Semifinales (SF-P1, SF-P2) - 7 Jul, 8 Jul
+    // Final Provincia - 11 Jul
     const provinciaPlayoffs = [
         { id: 'SF-P1', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo E', awayTeam: '2º Grupo F', homeScore: null, awayScore: null, date: '2026-07-07', time: '20:00', venue: '', status: 'pending' },
-        { id: 'SF-P2', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo F', awayTeam: '2º Grupo E', homeScore: null, awayScore: null, date: '2026-07-09', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-P2', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo F', awayTeam: '2º Grupo E', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
         
-        { id: 'Final-P', stage: 'playoffs', zone: 'provincia', round: 'F', homeTeam: 'Ganador SF-P1', awayTeam: 'Ganador SF-P2', homeScore: null, awayScore: null, date: '2026-07-14', time: '20:00', venue: '', status: 'pending' }
+        { id: 'Final-P', stage: 'playoffs', zone: 'provincia', round: 'F', homeTeam: 'Ganador SF-P1', awayTeam: 'Ganador SF-P2', homeScore: null, awayScore: null, date: '2026-07-11', time: '20:00', venue: '', status: 'pending' }
     ];
 
     // Gran Final Absoluta - 17 Jul

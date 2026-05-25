@@ -44,10 +44,10 @@ Los 24 equipos se dividen de forma aleatoria (mediante el panel de sorteo intera
     - SF-C2: Ganador CF3 vs Ganador CF4 (Lunes, 6 de Julio)
   - **Provincia:**
     - SF-P1: 1º Grupo E vs 2º Grupo F (Martes, 7 de Julio)
-    - SF-P2: 1º Grupo F vs 2º Grupo E (Jueves, 9 de Julio)
+    - SF-P2: 1º Grupo F vs 2º Grupo E (Miércoles, 8 de Julio)
 - **Finales de Fase:**
   - Final de Capital: Ganador SF-C1 vs Ganador SF-C2 (Miércoles, 15 de Julio) - Ciudad Deportiva Antonio Valls de Alicante (Sede Neutral).
-  - Final de Provincia: Ganador SF-P1 vs Ganador SF-P2 (Martes, 14 de Julio) - Ciudad Deportiva Camilo Cano de La Nucía (Sede Neutral).
+  - Final de Provincia: Ganador SF-P1 vs Ganador SF-P2 (Sábado, 11 de Julio) - Ciudad Deportiva Camilo Cano de La Nucía (Sede Neutral).
 - **Gran Final Absoluta:**
   - Campeón Capital vs Campeón Provincia (Viernes, 17 de Julio) - Estadio José Rico Pérez de Alicante (Sede Neutral).
 
