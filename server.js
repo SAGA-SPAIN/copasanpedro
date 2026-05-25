@@ -866,7 +866,7 @@ function generateDefaultState() {
     "awayTeam": "2º Grupo F",
     "homeScore": null,
     "awayScore": null,
-    "date": "2026-07-06",
+    "date": "2026-06-30",
     "time": "20:00",
     "venue": "",
     "status": "pending"
@@ -880,7 +880,7 @@ function generateDefaultState() {
     "awayTeam": "2º Grupo E",
     "homeScore": null,
     "awayScore": null,
-    "date": "2026-07-08",
+    "date": "2026-07-02",
     "time": "20:00",
     "venue": "",
     "status": "pending"
@@ -894,7 +894,7 @@ function generateDefaultState() {
     "awayTeam": "Ganador SF-P2",
     "homeScore": null,
     "awayScore": null,
-    "date": "2026-07-10",
+    "date": "2026-07-09",
     "time": "20:00",
     "venue": "",
     "status": "pending"

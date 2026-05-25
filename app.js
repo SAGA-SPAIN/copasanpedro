@@ -530,13 +530,13 @@ function generatePlayoffsSkeleton() {
     ];
 
     // Provincia Playoffs Skeleton
-    // Semifinales (SF-P1, SF-P2) - 6 Jul, 8 Jul
-    // Final Provincia - 10 Jul
+    // Semifinales (SF-P1, SF-P2) - 30 Jun, 2 Jul
+    // Final Provincia - 9 Jul
     const provinciaPlayoffs = [
-        { id: 'SF-P1', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo E', awayTeam: '2º Grupo F', homeScore: null, awayScore: null, date: '2026-07-06', time: '20:00', venue: '', status: 'pending' },
-        { id: 'SF-P2', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo F', awayTeam: '2º Grupo E', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-P1', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo E', awayTeam: '2º Grupo F', homeScore: null, awayScore: null, date: '2026-06-30', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-P2', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo F', awayTeam: '2º Grupo E', homeScore: null, awayScore: null, date: '2026-07-02', time: '20:00', venue: '', status: 'pending' },
         
-        { id: 'Final-P', stage: 'playoffs', zone: 'provincia', round: 'F', homeTeam: 'Ganador SF-P1', awayTeam: 'Ganador SF-P2', homeScore: null, awayScore: null, date: '2026-07-10', time: '20:00', venue: '', status: 'pending' }
+        { id: 'Final-P', stage: 'playoffs', zone: 'provincia', round: 'F', homeTeam: 'Ganador SF-P1', awayTeam: 'Ganador SF-P2', homeScore: null, awayScore: null, date: '2026-07-09', time: '20:00', venue: '', status: 'pending' }
     ];
 
     // Gran Final Absoluta - 17 Jul
@@ -875,8 +875,25 @@ function bindEvents() {
         btn.addEventListener('click', (e) => {
             const tabId = btn.getAttribute('data-tab');
             switchTab(tabId);
+            closeMobileNav();
         });
     });
+
+    // Mobile Hamburger Menu
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mainNav = document.getElementById('main-nav');
+    const navOverlay = document.getElementById('nav-overlay');
+    
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mainNav.classList.toggle('open');
+            navOverlay.classList.toggle('active');
+        });
+    }
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeMobileNav);
+    }
     
     // Group sub-tabs
     document.querySelectorAll('.group-tabs-selector .tab-pill').forEach(btn => {
@@ -1064,6 +1081,15 @@ function bindEvents() {
             }
         }
     });
+}
+
+function closeMobileNav() {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mainNav = document.getElementById('main-nav');
+    const navOverlay = document.getElementById('nav-overlay');
+    if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+    if (mainNav) mainNav.classList.remove('open');
+    if (navOverlay) navOverlay.classList.remove('active');
 }
 
 function switchTab(tabId) {
@@ -2403,14 +2429,14 @@ const SLIDES_DATA = [
                 <div class="timeline-event" style="width: 15%;">
                     <div class="timeline-node">SF</div>
                     <div class="timeline-info">
-                        <span class="date">6-8 Jul</span>
+                        <span class="date">30 Jun - 8 Jul</span>
                         <span class="label">Semifinales</span>
                     </div>
                 </div>
                 <div class="timeline-event" style="width: 15%;">
                     <div class="timeline-node">F</div>
                     <div class="timeline-info">
-                        <span class="date">10 Jul / 17 Jul</span>
+                        <span class="date">9-10 Jul / 17 Jul</span>
                         <span class="label">Finales / GF</span>
                     </div>
                 </div>
@@ -2539,12 +2565,12 @@ const SLIDES_DATA = [
                 <div class="info-card">
                     <h4>Playoffs Provincia</h4>
                     <p>Clasifican los <strong>2 primeros</strong> de los Grupos E y F.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Semifinales (6 y 8 Jul):</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Semifinales (30 Jun y 2 Jul):</p>
                     <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; line-height: 1.2;">
                         SF-P1: 1º Grupo E vs 2º Grupo F<br>
                         SF-P2: 1º Grupo F vs 2º Grupo E
                     </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Final Provincia: 10 de Julio (Neutral)</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Final Provincia: 9 de Julio (Neutral)</p>
                 </div>
                 <div class="info-card" style="border: 1px solid var(--primary); background: rgba(254, 189, 1, 0.02);">
                     <h4>Gran Final Absoluta</h4>
