@@ -367,6 +367,33 @@ function resetToDefaultState() {
 
 // --- 3. AUTOMATIC SCHEDULER ENGINE ---
 // --- 3. AUTOMATIC SCHEDULER ENGINE ---
+const TEAM_VENUES = {
+    "C1": "Pol. J.A. Samarach",
+    "C2": "Polideportivo Tombola",
+    "C3": "Ciudad Deportiva Antonio Valls",
+    "C4": "CF Sandra Paños",
+    "C5": "Campo de Futbol Antonio Solana",
+    "C6": "Pol. San Blas",
+    "C7": "polideportivo San Blas",
+    "C8": "Pol Pla Garbinet",
+    "C9": "Ciudad Deportiva Antonio Valls",
+    "C10": "C.F Florida Babel",
+    "C11": "Pol. J.A. Samarach",
+    "C12": "Polideportivo Tombola",
+    "C13": "CF Florida Babel",
+    "C14": "Pol. Pla Garbinet",
+    "C15": "Campo de Futbol Sandra Paños",
+    "C16": "Pol. Via Parque",
+    "P1": "Polideportivo El Oms Mutxamel",
+    "P2": "Polideportivo \"El Vincle\"",
+    "P3": "Polideportivo San Vicente del Raspeig",
+    "P4": "Estadio Municipal Nou Pla",
+    "P5": "Polideportivo Municipal El Altet",
+    "P6": "POLIDEPORTIVO TORRELLANO - ISABEL FERNANDEZ",
+    "P7": "Polideportivo San Vicente del Raspeig",
+    "P8": "Polideportivo El Oms Mutxamel"
+};
+
 function getMatchVenue(match) {
     if (match.venue && match.venue.trim() !== '') {
         return match.venue;
@@ -380,7 +407,7 @@ function getMatchVenue(match) {
     if (match.id === 'Gran-Final') {
         return 'Estadio José Rico Pérez de Alicante';
     }
-    return `Campo de ${getTeamFullName(match.homeTeam)}`;
+    return TEAM_VENUES[match.homeTeam] || `Campo de ${getTeamFullName(match.homeTeam)}`;
 }
 
 function generateInitialSchedule() {
@@ -499,7 +526,7 @@ function generateInitialSchedule() {
         const pIdx = match.pairIdx;
         
         match.date = matchDateAssignments[g][r][pIdx];
-        match.time = '20:00';
+        match.time = match.zone === 'capital' ? '20:30' : '20:00';
         match.venue = ''; // Empty string, resolved dynamically by getMatchVenue
         
         delete match.pairIdx; // clean up temporary property
@@ -518,15 +545,15 @@ function generatePlayoffsSkeleton() {
     // Final Capital - 10 Jul
     
     const capitalPlayoffs = [
-        { id: 'CF1', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo A', awayTeam: '2º Grupo C', homeScore: null, awayScore: null, date: '2026-06-29', time: '20:00', venue: '', status: 'pending' },
-        { id: 'CF2', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo B', awayTeam: '2º Grupo D', homeScore: null, awayScore: null, date: '2026-06-29', time: '20:00', venue: '', status: 'pending' },
-        { id: 'CF3', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo C', awayTeam: '2º Grupo A', homeScore: null, awayScore: null, date: '2026-07-01', time: '20:00', venue: '', status: 'pending' },
-        { id: 'CF4', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo D', awayTeam: '2º Grupo B', homeScore: null, awayScore: null, date: '2026-07-01', time: '20:00', venue: '', status: 'pending' },
+        { id: 'CF1', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo A', awayTeam: '2º Grupo C', homeScore: null, awayScore: null, date: '2026-06-29', time: '20:30', venue: '', status: 'pending' },
+        { id: 'CF2', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo B', awayTeam: '2º Grupo D', homeScore: null, awayScore: null, date: '2026-06-29', time: '20:30', venue: '', status: 'pending' },
+        { id: 'CF3', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo C', awayTeam: '2º Grupo A', homeScore: null, awayScore: null, date: '2026-07-01', time: '20:30', venue: '', status: 'pending' },
+        { id: 'CF4', stage: 'playoffs', zone: 'capital', round: 'CF', homeTeam: '1º Grupo D', awayTeam: '2º Grupo B', homeScore: null, awayScore: null, date: '2026-07-01', time: '20:30', venue: '', status: 'pending' },
         
-        { id: 'SF-C1', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF1', awayTeam: 'Ganador CF2', homeScore: null, awayScore: null, date: '2026-07-06', time: '20:00', venue: '', status: 'pending' },
-        { id: 'SF-C2', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF3', awayTeam: 'Ganador CF4', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-C1', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF1', awayTeam: 'Ganador CF2', homeScore: null, awayScore: null, date: '2026-07-06', time: '20:30', venue: '', status: 'pending' },
+        { id: 'SF-C2', stage: 'playoffs', zone: 'capital', round: 'SF', homeTeam: 'Ganador CF3', awayTeam: 'Ganador CF4', homeScore: null, awayScore: null, date: '2026-07-08', time: '20:30', venue: '', status: 'pending' },
         
-        { id: 'Final-C', stage: 'playoffs', zone: 'capital', round: 'F', homeTeam: 'Ganador SF-C1', awayTeam: 'Ganador SF-C2', homeScore: null, awayScore: null, date: '2026-07-10', time: '20:00', venue: '', status: 'pending' }
+        { id: 'Final-C', stage: 'playoffs', zone: 'capital', round: 'F', homeTeam: 'Ganador SF-C1', awayTeam: 'Ganador SF-C2', homeScore: null, awayScore: null, date: '2026-07-10', time: '20:30', venue: '', status: 'pending' }
     ];
 
     // Provincia Playoffs Skeleton
