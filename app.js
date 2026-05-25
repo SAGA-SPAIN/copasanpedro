@@ -85,11 +85,11 @@ let state = {
     settings: {
         allowWeekends: false,
         useMultisede: true,
-        maxMatchesPerDay: 2,
+        maxMatchesPerDay: 3,
         minRestDays: 2,
         blockedDates: []
     },
-    activeTab: 'presentation',
+    activeTab: 'groups',
     currentSlide: 0,
     currentCalendarMonth: 5, // June (0-indexed calendar is 5)
     currentCalendarYear: 2026,
@@ -352,7 +352,7 @@ function resetToDefaultState() {
     state.settings = {
         allowWeekends: false,
         useMultisede: true,
-        maxMatchesPerDay: 2,
+        maxMatchesPerDay: 3,
         minRestDays: 2,
         blockedDates: [...DEFAULT_BLOCKED_DATES]
     };
@@ -470,7 +470,6 @@ function generateInitialSchedule() {
     // Apply home/away and id swaps for the matches that deviate from standard template
     const swaps = {
         'B-R3-C9vC1': { newId: 'B-R3-C1vC9', home: 'C1', away: 'C9' },
-        'B-R3-C14vC11': { newId: 'B-R3-C11vC14', home: 'C11', away: 'C14' },
         'C-R3-C5vC8': { newId: 'C-R3-C8vC5', home: 'C8', away: 'C5' },
         'C-R3-C10vC16': { newId: 'C-R3-C16vC10', home: 'C16', away: 'C10' }
     };
@@ -488,33 +487,33 @@ function generateInitialSchedule() {
     const matchDateAssignments = {
         'A': {
             1: { 0: '2026-06-01', 1: '2026-06-03' },
-            2: { 0: '2026-06-08', 1: '2026-06-10' },
-            3: { 0: '2026-06-12', 1: '2026-06-12' }
+            2: { 0: '2026-06-05', 1: '2026-06-08' },
+            3: { 0: '2026-06-17', 1: '2026-06-17' }
         },
         'B': {
             1: { 0: '2026-06-01', 1: '2026-06-03' },
-            2: { 0: '2026-06-08', 1: '2026-06-10' },
-            3: { 0: '2026-06-15', 1: '2026-06-15' }
+            2: { 0: '2026-06-05', 1: '2026-06-08' },
+            3: { 0: '2026-06-17', 1: '2026-06-17' }
         },
         'C': {
-            1: { 0: '2026-06-08', 1: '2026-06-05' },
-            2: { 0: '2026-06-15', 1: '2026-06-10' },
+            1: { 0: '2026-06-05', 1: '2026-06-01' },
+            2: { 0: '2026-06-10', 1: '2026-06-12' },
             3: { 0: '2026-06-19', 1: '2026-06-19' }
         },
         'D': {
-            1: { 0: '2026-06-03', 1: '2026-06-05' },
-            2: { 0: '2026-06-17', 1: '2026-06-17' },
-            3: { 0: '2026-06-26', 1: '2026-06-26' }
+            1: { 0: '2026-06-03', 1: '2026-06-08' },
+            2: { 0: '2026-06-12', 1: '2026-06-10' },
+            3: { 0: '2026-06-19', 1: '2026-06-19' }
         },
         'E': {
             1: { 0: '2026-06-09', 1: '2026-06-11' },
             2: { 0: '2026-06-16', 1: '2026-06-18' },
-            3: { 0: '2026-06-23', 1: '2026-06-23' }
+            3: { 0: '2026-06-25', 1: '2026-06-30' }
         },
         'F': {
             1: { 0: '2026-06-09', 1: '2026-06-11' },
             2: { 0: '2026-06-16', 1: '2026-06-18' },
-            3: { 0: '2026-06-25', 1: '2026-06-25' }
+            3: { 0: '2026-06-25', 1: '2026-06-30' }
         }
     };
     
@@ -558,10 +557,10 @@ function generatePlayoffsSkeleton() {
     // Semifinales (SF-P1, SF-P2) - 30 Jun, 2 Jul
     // Final Provincia - 9 Jul
     const provinciaPlayoffs = [
-        { id: 'SF-P1', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo E', awayTeam: '2º Grupo F', homeScore: null, awayScore: null, date: '2026-06-30', time: '20:00', venue: '', status: 'pending' },
-        { id: 'SF-P2', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo F', awayTeam: '2º Grupo E', homeScore: null, awayScore: null, date: '2026-07-02', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-P1', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo E', awayTeam: '2º Grupo F', homeScore: null, awayScore: null, date: '2026-07-07', time: '20:00', venue: '', status: 'pending' },
+        { id: 'SF-P2', stage: 'playoffs', zone: 'provincia', round: 'SF', homeTeam: '1º Grupo F', awayTeam: '2º Grupo E', homeScore: null, awayScore: null, date: '2026-07-09', time: '20:00', venue: '', status: 'pending' },
         
-        { id: 'Final-P', stage: 'playoffs', zone: 'provincia', round: 'F', homeTeam: 'Ganador SF-P1', awayTeam: 'Ganador SF-P2', homeScore: null, awayScore: null, date: '2026-07-09', time: '20:00', venue: '', status: 'pending' }
+        { id: 'Final-P', stage: 'playoffs', zone: 'provincia', round: 'F', homeTeam: 'Ganador SF-P1', awayTeam: 'Ganador SF-P2', homeScore: null, awayScore: null, date: '2026-07-14', time: '20:00', venue: '', status: 'pending' }
     ];
 
     // Gran Final Absoluta - 17 Jul
@@ -1065,11 +1064,7 @@ function bindEvents() {
     document.getElementById('modal-date').addEventListener('change', validateModalMatchInput);
     document.getElementById('modal-venue').addEventListener('change', validateModalMatchInput);
 
-    // Slide Controls
-    const prevSlideBtn = document.getElementById('btn-prev-slide');
-    const nextSlideBtn = document.getElementById('btn-next-slide');
-    if (prevSlideBtn) prevSlideBtn.addEventListener('click', prevSlide);
-    if (nextSlideBtn) nextSlideBtn.addEventListener('click', nextSlide);
+
 
     // Login triggers & form binding
     const loginTriggerBtn = document.getElementById('btn-login-trigger');
@@ -1094,18 +1089,6 @@ function bindEvents() {
         loginForm.addEventListener('submit', handleLoginSubmit);
     }
 
-    // Keyboard navigation for Presentation tab
-    window.addEventListener('keydown', (e) => {
-        if (state.activeTab === 'presentation') {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
-                e.preventDefault(); // Prevent page scroll
-                nextSlide();
-            } else if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                prevSlide();
-            }
-        }
-    });
 }
 
 function closeMobileNav() {
@@ -1130,8 +1113,6 @@ function switchTab(tabId) {
     });
     if (tabId === 'draw') {
         renderDrawTab();
-    } else if (tabId === 'presentation') {
-        renderSlide();
     }
 }
 
@@ -1199,7 +1180,6 @@ function renderAll() {
     renderPlayoffBrackets();
     renderConfigPanel();
     renderDrawTab();
-    renderSlide();
     
     // Sync view mode on load
     switchCalendarViewMode(state.calendarViewMode || 'list');
@@ -2402,270 +2382,7 @@ function randomizeDraw() {
     }
 }
 
-// --- 13. PRESENTATION SLIDESHOW DATA & LOGIC ---
-const SLIDES_DATA = [
-    {
-        title: "78ª Copa San Pedro 2026",
-        content: `
-            <div class="cover-slide">
-                <img src="https://www.copasanpedro.es/wp-content/uploads/2026/03/logocopasp.png" alt="Copa San Pedro Logo" class="cover-logo-img">
-                <div class="cover-edition">78ª EDICIÓN</div>
-                <div class="cover-subtitle">Procedimiento de Sorteo y Criterios de Distribución del Calendario</div>
-                <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-muted);">Explicación técnica de la estructura competitiva antes del sorteo oficial</p>
-            </div>
-        `
-    },
-    {
-        title: "Fechas Clave y Pausas",
-        content: `
-            <div style="background: rgba(254, 189, 1, 0.1); border-left: 4px solid var(--primary); padding: 0.75rem 1rem; border-radius: 4px; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.4; color: var(--text-main);">
-                <strong>Ajuste de Fechas y Descanso:</strong> Debido a que hay equipos que juegan la fase eliminatoria (playoffs), se han modificado y adaptado las fechas para distanciar los partidos entre Cuartos de Final, Semifinales, Finales y la Gran Final. Esto garantiza descansos más prolongados y equitativos para las plantillas.
-            </div>
-            <p>El calendario se ha estructurado para respetar días festivos locales y coordinarse con grandes eventos deportivos:</p>
-            <div class="timeline-container">
-                <div class="timeline-event" style="width: 15%;">
-                    <div class="timeline-node">1</div>
-                    <div class="timeline-info">
-                        <span class="date">1/9 Jun</span>
-                        <span class="label">Inicio Torneo</span>
-                    </div>
-                </div>
-                <div class="timeline-event" style="width: 15%;">
-                    <div class="timeline-node blocked">M</div>
-                    <div class="timeline-info">
-                        <span class="date">15 y 27 Jun</span>
-                        <span class="label">Pausa Mundial</span>
-                    </div>
-                </div>
-                <div class="timeline-event" style="width: 15%;">
-                    <div class="timeline-node blocked">H</div>
-                    <div class="timeline-info">
-                        <span class="date">20-24 Jun</span>
-                        <span class="label">Hogueras</span>
-                    </div>
-                </div>
-                <div class="timeline-event" style="width: 15%;">
-                    <div class="timeline-node">CF</div>
-                    <div class="timeline-info">
-                        <span class="date">29 Jun - 1 Jul</span>
-                        <span class="label">Cuartos Final</span>
-                    </div>
-                </div>
-                <div class="timeline-event" style="width: 15%;">
-                    <div class="timeline-node">SF</div>
-                    <div class="timeline-info">
-                        <span class="date">30 Jun - 8 Jul</span>
-                        <span class="label">Semifinales</span>
-                    </div>
-                </div>
-                <div class="timeline-event" style="width: 15%;">
-                    <div class="timeline-node">F</div>
-                    <div class="timeline-info">
-                        <span class="date">9-10 Jul / 17 Jul</span>
-                        <span class="label">Finales / GF</span>
-                    </div>
-                </div>
-            </div>
-            <ul class="slide-bullets" style="margin-top: 1.5rem;">
-                <li><strong>Coordinación Mundial de España:</strong> Pausas en días clave de la fase de grupos para evitar competencia televisiva y de asistencia.</li>
-                <li><strong>Festividad de Hogueras:</strong> Parón completo del 20 al 24 de junio para permitir la participación festiva de Alicante.</li>
-            </ul>
-        `
-    },
-    {
-        title: "Reglas de Carga y Descanso",
-        content: `
-            <p>Para velar por la integridad física de los futbolistas y asegurar la mejor experiencia competitiva:</p>
-            <div class="infographic-row">
-                <div class="info-card">
-                    <h4>Asistencia de Público</h4>
-                    <p>Máximo <strong>2 partidos diarios</strong> por sede para favorecer la asistencia de público al máximo de partidos.</p>
-                </div>
-                <div class="info-card">
-                    <h4>Descanso Mínimo</h4>
-                    <p>Mínimo <strong>2 días completos</strong> de descanso entre partidos para cada equipo participante.</p>
-                </div>
-                <div class="info-card">
-                    <h4>Simetría de Grupo</h4>
-                    <p>Los partidos del mismo grupo se juegan en días diferentes para que los equipos puedan seguir a sus rivales.</p>
-                </div>
-            </div>
-            <ul class="slide-bullets" style="margin-top: 1.5rem;">
-                <li>El motor del calendario comprueba dinámicamente estas reglas. Cualquier cambio manual en fechas que infrinja las reglas mostrará una alerta visual inmediata.</li>
-            </ul>
-        `
-    },
-    {
-        title: "Criterios de Grupos",
-        content: `
-            <p>Los 24 equipos se dividen en 6 grupos de forma aleatoria mediante sorteo, separando las fases competitivas:</p>
-            <div class="infographic-row" style="margin-top: 1.5rem;">
-                <div class="info-card" style="border-left: 4px solid var(--primary);">
-                    <h4>Fase Capital (A, B, C, D)</h4>
-                    <p><strong>16 Equipos</strong> distribuidos en 4 grupos de forma aleatoria.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">Días: Lunes, Miércoles, Viernes</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Sedes: Campo de cada equipo (Local)</p>
-                </div>
-                <div class="info-card" style="border-left: 4px solid #fff;">
-                    <h4>Fase Provincia (E, F)</h4>
-                    <p><strong>8 Equipos</strong> distribuidos en 2 grupos de forma aleatoria.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">Días: Martes, Jueves</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Sedes: Campo de cada equipo (Local)</p>
-                </div>
-            </div>
-            <ul class="slide-bullets" style="margin-top: 1.5rem;">
-                <li><strong>Sedes Propias:</strong> Cada equipo aporta su propio campo de juego para disputar sus partidos como local.</li>
-                <li><strong>Sedes Neutrales para Finales:</strong>
-                    <br>- Final Capital: <strong>Ciudad Deportiva Antonio Valls</strong> (Alicante)
-                    <br>- Final Provincia: <strong>Ciudad Deportiva Camilo Cano</strong> (La Nucía)
-                    <br>- Gran Final Absoluta: <strong>Estadio José Rico Pérez</strong> (Alicante)
-                </li>
-            </ul>
-        `
-    },
-    {
-        title: "Alternancia de Localía",
-        content: `
-            <p>Se ha implementado una restricción estricta para garantizar que ningún equipo juegue los 3 partidos de la fase de grupos en la misma condición:</p>
-            <div class="infographic-row" style="margin-top: 1.5rem;">
-                <div class="info-card" style="max-width: 400px; margin: 0 auto; text-align: center;">
-                    <h4>Patrones de Alternancia Permitidos</h4>
-                    <div class="alternation-visual">
-                        <span class="alt-pill local">LOCAL (J1)</span>
-                        <span class="alt-arrow">➔</span>
-                        <span class="alt-pill visitante">VISITANTE (J2)</span>
-                        <span class="alt-arrow">➔</span>
-                        <span class="alt-pill local">LOCAL (J3)</span>
-                    </div>
-                    <div class="alternation-visual" style="margin-top: 1rem;">
-                        <span class="alt-pill visitante">VISITANTE (J1)</span>
-                        <span class="alt-arrow">➔</span>
-                        <span class="alt-pill local">LOCAL (J2)</span>
-                        <span class="alt-arrow">➔</span>
-                        <span class="alt-pill visitante">VISITANTE (J3)</span>
-                    </div>
-                </div>
-            </div>
-            <ul class="slide-bullets" style="margin-top: 1.5rem;">
-                <li><strong>Equidad de campo:</strong> Todos los equipos juegan al menos un partido en casa y uno fuera, evitando ventajas injustas de jugar tres veces como local o visitante.</li>
-            </ul>
-        `
-    },
-    {
-        title: "Mecánica del Sorteo en Directo",
-        content: `
-            <p>El sorteo se realiza de forma presencial con bolilleros tradicionales y asistencia informática instantánea:</p>
-            <ol class="slide-bullets" style="display: flex; text-align: left; gap: 0.75rem; margin-top: 1rem;">
-                <li>Los representantes de los equipos extraen una <strong>bolita física</strong> que contiene un código ficticio:
-                    <br><span style="color: var(--primary); font-weight: 700;">C1 a C16</span> (Capital) o <span style="color: #fff; font-weight: 700;">P1 a P8</span> (Provincia).
-                </li>
-                <li>Ese código ficticio corresponde a una <strong>posición preestablecida</strong> en los grupos y calendario precomputado.</li>
-                <li>Desde el <strong>Panel del Sorteo</strong>, seleccionamos al equipo real y lo vinculamos al código obtenido.</li>
-                <li>El sistema actualiza automáticamente todos los grupos, calendarios y nombres en tiempo real para las pantallas.</li>
-            </ol>
-        `
-    },
-    {
-        title: "Fase Final y Eliminatorias",
-        content: `
-            <p>Estructura de cruces directos que conduce a la unificación del torneo (reajustada para garantizar descansos óptimos):</p>
-            <div class="infographic-row">
-                <div class="info-card">
-                    <h4>Playoffs Capital</h4>
-                    <p>Clasifican los <strong>2 primeros</strong> de los Grupos A, B, C y D.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Cuartos (29 Jun y 1 Jul):</p>
-                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; line-height: 1.2;">
-                        CF1: 1º Grupo A vs 2º Grupo C<br>
-                        CF2: 1º Grupo B vs 2º Grupo D<br>
-                        CF3: 1º Grupo C vs 2º Grupo A<br>
-                        CF4: 1º Grupo D vs 2º Grupo B
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Semifinales (6 y 8 Jul):</p>
-                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; line-height: 1.2;">
-                        SF-C1: Ganador CF1 vs Ganador CF2<br>
-                        SF-C2: Ganador CF3 vs Ganador CF4
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Final Capital: 10 de Julio (Neutral)</p>
-                </div>
-                <div class="info-card">
-                    <h4>Playoffs Provincia</h4>
-                    <p>Clasifican los <strong>2 primeros</strong> de los Grupos E y F.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-weight: 700;">Semifinales (30 Jun y 2 Jul):</p>
-                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; line-height: 1.2;">
-                        SF-P1: 1º Grupo E vs 2º Grupo F<br>
-                        SF-P2: 1º Grupo F vs 2º Grupo E
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Final Provincia: 9 de Julio (Neutral)</p>
-                </div>
-                <div class="info-card" style="border: 1px solid var(--primary); background: rgba(254, 189, 1, 0.02);">
-                    <h4>Gran Final Absoluta</h4>
-                    <p>Se enfrentan los campeones de las fases Capital y Provincia.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--primary); font-weight: 700;">Viernes, 17 de Julio</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Estadio José Rico Pérez de Alicante</p>
-                </div>
-            </div>
-        `
-    }
-];
 
-function renderSlide() {
-    const container = document.getElementById('slide-container');
-    const dotsContainer = document.getElementById('slide-dots');
-    if (!container || !dotsContainer) return;
-
-    const current = state.currentSlide || 0;
-    const slide = SLIDES_DATA[current];
-
-    // Render slide HTML
-    container.innerHTML = `
-        <h2 class="slide-title">${slide.title}</h2>
-        <div class="slide-body">${slide.content}</div>
-    `;
-
-    // Render navigation dots
-    dotsContainer.innerHTML = '';
-    SLIDES_DATA.forEach((_, idx) => {
-        const dot = document.createElement('div');
-        dot.className = `slide-dot ${idx === current ? 'active' : ''}`;
-        dot.title = `Diapositiva ${idx + 1}`;
-        dot.addEventListener('click', () => {
-            goToSlide(idx);
-        });
-        dotsContainer.appendChild(dot);
-    });
-
-    // Disable/enable prev/next buttons
-    const prevBtn = document.getElementById('btn-prev-slide');
-    const nextBtn = document.getElementById('btn-next-slide');
-    if (prevBtn) prevBtn.disabled = current === 0;
-    if (nextBtn) nextBtn.disabled = current === SLIDES_DATA.length - 1;
-}
-
-function nextSlide() {
-    const current = state.currentSlide || 0;
-    if (current < SLIDES_DATA.length - 1) {
-        state.currentSlide = current + 1;
-        saveState();
-        renderSlide();
-    }
-}
-
-function prevSlide() {
-    const current = state.currentSlide || 0;
-    if (current > 0) {
-        state.currentSlide = current - 1;
-        saveState();
-        renderSlide();
-    }
-}
-
-function goToSlide(index) {
-    if (index >= 0 && index < SLIDES_DATA.length) {
-        state.currentSlide = index;
-        saveState();
-        renderSlide();
-    }
-}
 
 // Run app
 window.addEventListener('DOMContentLoaded', initApp);

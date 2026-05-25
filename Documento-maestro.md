@@ -6,7 +6,7 @@ La **78 Copa San Pedro 2026** se organiza bajo un estricto calendario que armoni
 - **Festividad de Hogueras (Alicante):** La pausa oficial del 20 al 24 de junio responde a las celebraciones de las Hogueras de San Juan, permitiendo el descanso de los equipos y la logística local.
 
 ## 2. Reglas de Negocio (Constraints)
-1. **Límite de Carga / Asistencia de Público:** Máximo 2 partidos diarios en total para favorecer la asistencia de público al máximo de partidos y garantizar un seguimiento completo.
+1. **Límite de Carga / Asistencia de Público:** Máximo 3 partidos diarios en la fase de grupos de la capital (2 partidos en la de provincia) para favorecer la asistencia de público al máximo de partidos y garantizar un seguimiento completo.
 2. **Descanso Mínimo:** Mínimo 2 días completos entre partidos para cada equipo participante para velar por su integridad física.
 3. **Distribución de Zonas:** Grupos A-D (Capital) juegan Lunes, Miércoles y Viernes. Grupos E-F (Provincia) juegan Martes y Jueves.
 4. **Simetría del Grupo (No coincidencia en el mismo día):** Los partidos correspondientes a un mismo grupo y jornada no pueden disputarse el mismo día, favoreciendo que los equipos del mismo grupo puedan asistir a presenciar los encuentros de sus futuros rivales.
@@ -54,25 +54,43 @@ Los 24 equipos se dividen de forma aleatoria (mediante el panel de sorteo intera
 ## 5. Calendario Maestro Detallado (Fase de Grupos)
 El calendario ha sido generado de manera que los dos partidos de cada jornada en un mismo grupo no coincidan en el mismo día, respetando la alternancia estricta de local/visitante y los días de juego designados por zona:
 
-### Fase Capital (Lunes, Miércoles, Viernes - 20:00)
-- **Jornada 1:**
-  - Grupo A: Partido 1 (Lunes 1 Jun), Partido 2 (Miércoles 3 Jun)
-  - Grupo B: Partido 1 (Lunes 1 Jun), Partido 2 (Miércoles 3 Jun)
-  - Grupo C: Partido 1 (Viernes 5 Jun), Partido 2 (Lunes 8 Jun)
-  - Grupo D: Partido 1 (Viernes 5 Jun), Partido 2 (Lunes 8 Jun)
-- **Jornada 2:**
-  - Grupo A: Partido 1 (Miércoles 10 Jun), Partido 2 (Viernes 12 Jun)
-  - Grupo B: Partido 1 (Miércoles 10 Jun), Partido 2 (Viernes 12 Jun)
-  - Grupo C: Partido 1 (Miércoles 17 Jun), Partido 2 (Viernes 19 Jun)
-  - Grupo D: Partido 1 (Miércoles 17 Jun), Partido 2 (Viernes 19 Jun)
+### Fase Capital (Lunes, Miércoles, Viernes - 20:30)
+El calendario se organiza de forma que se juegan **3 partidos diarios** en los días normales y **4 partidos diarios** en la última jornada (Jornada 3) para permitir la unificación de horarios por grupos (Grupo A y B juntos, Grupo C y D juntos). Las sedes están organizadas de forma que no coincidan en el mismo día. La fase completa se finaliza antes de las Hogueras (el 19 de junio).
+
+- **Lunes 1 de Junio:**
+  - Grupo A: SCD San Blas vs Viasport Maristas (`A-R1-C7vC2`)
+  - Grupo B: Inter Leuka-Dual Link vs Alicante Sport Academy (`B-R1-C9vC11`)
+  - Grupo C: C.A. El Principio vs Salesianos by Dickens (`C-R1-C8vC10`)
+- **Miércoles 3 de Junio:**
+  - Grupo A: Playas Alicante vs Mediterráneo-Peña El Botijo (`A-R1-C15vC4`)
+  - Grupo B: CF Barrio San Gabriel vs CD Campello- Casa Salvi (`B-R1-C1vC14`)
+  - Grupo D: Alicante Football Academy vs Lacross Babel (`D-R1-C3vC12`)
+- **Viernes 5 de Junio:**
+  - Grupo A: Mediterráneo-Peña El Botijo vs SCD San Blas (`A-R2-C4vC7`)
+  - Grupo B: CD Campello- Casa Salvi vs Inter Leuka-Dual Link (`B-R2-C14vC9`)
+  - Grupo C: CD Villafranqueza vs Alicante City FC Academy (`C-R1-C5vC16`) *(Nota: Alicante City comienza el 5 de junio).*
+- **Lunes 8 de Junio:**
+  - Grupo A: Viasport Maristas vs Playas Alicante (`A-R2-C2vC15`)
+  - Grupo B: Alicante Sport Academy vs CF Barrio San Gabriel (`B-R2-C11vC1`)
+  - Grupo D: Atletico San Blas vs Betis Florida (`D-R1-C6vC13`)
+- **Miércoles 10 de Junio:**
+  - Grupo C: Salesianos by Dickens vs CD Villafranqueza (`C-R2-C10vC5`)
+  - Grupo D: Lacross Babel vs Atletico San Blas (`D-R2-C12vC6`)
+- **Viernes 12 de Junio:**
+  - Grupo C: Alicante City FC Academy vs C.A. El Principio (`C-R2-C16vC8`)
+  - Grupo D: Betis Florida vs Alicante Football Academy (`D-R2-C13vC3`)
   *(Nota: El lunes 15 de junio queda libre por parón del Mundial).*
-- **Pausa de Hogueras:** Del 20 al 24 de junio.
-- **Jornada 3:**
-  - Grupo A: Partido 1 (Viernes 26 Jun), Partido 2 (Lunes 29 Jun)
-  - Grupo B: Partido 1 (Viernes 26 Jun), Partido 2 (Lunes 29 Jun)
-  - Grupo C: Partido 1 (Miércoles 1 Jul), Partido 2 (Viernes 3 Jul)
-  - Grupo D: Partido 1 (Miércoles 1 Jul), Partido 2 (Viernes 3 Jul)
-  *(Nota: El sábado 27 de junio queda libre por parón del Mundial).*
+- **Pausa de Hogueras:** Del 20 al 24 de junio. No se programa ningún partido (ni Capital ni Provincia).
+- **Miércoles 17 de Junio (Jornada 3 - Grupos A y B unificados):**
+  - Grupo A: SCD San Blas vs Playas Alicante (`A-R3-C7vC15`)
+  - Grupo A: Mediterráneo-Peña El Botijo vs Viasport Maristas (`A-R3-C4vC2`)
+  - Grupo B: CF Barrio San Gabriel vs Inter Leuka-Dual Link (`B-R3-C1vC9`)
+  - Grupo B: CD Campello- Casa Salvi vs Alicante Sport Academy (`B-R3-C14vC11`) *(Nota: Swapped home/away to avoid venue overlap at Samarach).*
+- **Viernes 19 de Junio (Jornada 3 - Grupos C y D unificados):**
+  - Grupo C: C.A. El Principio vs CD Villafranqueza (`C-R3-C8vC5`)
+  - Grupo C: Alicante City FC Academy vs Salesianos by Dickens (`C-R3-C16vC10`)
+  - Grupo D: Alicante Football Academy vs Atletico San Blas (`D-R3-C3vC6`)
+  - Grupo D: Betis Florida vs Lacross Babel (`D-R3-C13vC12`)
 
 ### Fase Provincia (Martes, Jueves - 20:00)
 - **Jornada 1:**
@@ -82,8 +100,8 @@ El calendario ha sido generado de manera que los dos partidos de cada jornada en
   - Grupo E: Partido 1 (Martes 9 Jun), Partido 2 (Jueves 11 Jun)
   - Grupo F: Partido 1 (Martes 9 Jun), Partido 2 (Jueves 11 Jun)
 - **Jornada 3:**
-  - Grupo E: Partido 1 (Martes 16 Jun), Partido 2 (Jueves 18 Jun)
-  - Grupo F: Partido 1 (Martes 16 Jun), Partido 2 (Jueves 18 Jun)
+  - Grupo E: Partido 1 (Jueves 25 Jun), Partido 2 (Martes 30 Jun) *(Nota: Repartidos para evitar coincidencia de sede en San Vicente, y evitando Hogueras).*
+  - Grupo F: Partido 1 (Jueves 25 Jun), Partido 2 (Martes 30 Jun) *(Nota: Repartidos para evitar coincidencia de sede en Mutxamel, y evitando Hogueras).*
 
 ## 6. Integración Técnica
 Las claves ficticias de los equipos (`C1-C16` y `P1-P8`) actúan como marcadores de posición fijos en el calendario maestro. La resolución de nombres y la actualización de sedes locales correspondientes (`Campo de [Nombre del Equipo]`) se realiza en tiempo real a medida que se introducen las asignaciones a través del panel de sorteo interactivo, garantizando la consistencia lógica total del sistema de competición.

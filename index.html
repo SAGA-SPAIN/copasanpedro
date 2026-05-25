@@ -30,11 +30,7 @@
             </button>
             <div class="nav-overlay" id="nav-overlay"></div>
             <nav class="app-nav" id="main-nav">
-                <button class="nav-btn active" data-tab="presentation" id="nav-presentation">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg>
-                    <span>Presentación</span>
-                </button>
-                <button class="nav-btn" data-tab="groups" id="nav-groups">
+                <button class="nav-btn active" data-tab="groups" id="nav-groups">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
                     <span>Grupos</span>
                 </button>
@@ -65,24 +61,8 @@
     </header>
 
     <main class="main-content">
-        <!-- TAB PRESENTATION -->
-        <section id="tab-presentation" class="tab-pane active">
-            <div class="presentation-container">
-                <div class="slide-wrapper" id="slide-container">
-                    <!-- Slide content rendered by JS -->
-                </div>
-                <div class="slide-nav">
-                    <button class="btn btn-secondary btn-sm" id="btn-prev-slide">Anterior</button>
-                    <div class="slide-dots" id="slide-dots">
-                        <!-- Dots rendered by JS -->
-                    </div>
-                    <button class="btn btn-primary btn-sm" id="btn-next-slide">Siguiente</button>
-                </div>
-            </div>
-        </section>
-
         <!-- TAB 2: GROUPS & STANDINGS -->
-        <section id="tab-groups" class="tab-pane">
+        <section id="tab-groups" class="tab-pane active">
             <div class="section-header">
                 <h2>Distribución de Grupos y Clasificación</h2>
                 <div class="group-tabs-selector">
