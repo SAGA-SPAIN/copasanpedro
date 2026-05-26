@@ -8,7 +8,7 @@ const APP_FILE = path.join(__dirname, 'app.js');
 // 1. Correct names map
 const teamMap = {
   // Capital (Grupos A-D)
-  'C1': 'CF BARRIO SAN GABRIEL',
+  'C1': 'GAVIOTA CF B.º SAN GABRIEL',
   'C2': 'VIASPORT MARISTAS',
   'C3': 'ALICANTE FOOTBALL ACADEMY',
   'C4': 'MEDITERRÁNEO-PEÑA EL BOTIJO',
@@ -28,9 +28,9 @@ const teamMap = {
   // Provincia (Grupos E-F)
   'P1': 'MONNEGRE MUCHAMIEL',
   'P2': 'FUNDACIÓN CD CAMPELLO',
-  'P3': 'JOVE ESPAÑOL SANT VICENT',
+  'P3': 'CD ESPAÑOL SAN VICENTE',
   'P4': 'VILLAJOYOSA CF',
-  'P5': 'ALTET CF',
+  'P5': 'CD ALTET',
   'P6': 'AC TORRELANO',
   'P7': 'GIMNÀSTIC SANT VICENT',
   'P8': 'MUTXAMEL CF'

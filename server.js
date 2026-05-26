@@ -74,7 +74,7 @@ function generateDefaultState() {
     const teams = [
   {
     "id": "C1",
-    "name": "CF BARRIO SAN GABRIEL",
+    "name": "GAVIOTA CF B.º SAN GABRIEL",
     "zone": "capital",
     "group": "B"
   },
@@ -182,7 +182,7 @@ function generateDefaultState() {
   },
   {
     "id": "P3",
-    "name": "JOVE ESPAÑOL SANT VICENT",
+    "name": "CD ESPAÑOL SAN VICENTE",
     "zone": "provincia",
     "group": "E"
   },
@@ -194,7 +194,7 @@ function generateDefaultState() {
   },
   {
     "id": "P5",
-    "name": "ALTET CF",
+    "name": "CD ALTET",
     "zone": "provincia",
     "group": "E"
   },

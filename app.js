@@ -3,7 +3,7 @@
 // --- 1. BASE DATABASE & INITIAL STATE ---
 const INITIAL_TEAMS = [
     // Capital (Grupos A-D)
-    { id: 'C1', name: 'CF BARRIO SAN GABRIEL', zone: 'capital', group: 'B' },
+    { id: 'C1', name: 'GAVIOTA CF B.º SAN GABRIEL', zone: 'capital', group: 'B' },
     { id: 'C2', name: 'VIASPORT MARISTAS', zone: 'capital', group: 'A' },
     { id: 'C3', name: 'ALICANTE FOOTBALL ACADEMY', zone: 'capital', group: 'D' },
     { id: 'C4', name: 'MEDITERRÁNEO-PEÑA EL BOTIJO', zone: 'capital', group: 'A' },
@@ -23,9 +23,9 @@ const INITIAL_TEAMS = [
     // Provincia (Grupos E-F)
     { id: 'P1', name: 'MONNEGRE MUCHAMIEL', zone: 'provincia', group: 'F' },
     { id: 'P2', name: 'FUNDACIÓN CD CAMPELLO', zone: 'provincia', group: 'F' },
-    { id: 'P3', name: 'JOVE ESPAÑOL SANT VICENT', zone: 'provincia', group: 'E' },
+    { id: 'P3', name: 'CD ESPAÑOL SAN VICENTE', zone: 'provincia', group: 'E' },
     { id: 'P4', name: 'VILLAJOYOSA CF', zone: 'provincia', group: 'F' },
-    { id: 'P5', name: 'ALTET CF', zone: 'provincia', group: 'E' },
+    { id: 'P5', name: 'CD ALTET', zone: 'provincia', group: 'E' },
     { id: 'P6', name: 'AC TORRELANO', zone: 'provincia', group: 'E' },
     { id: 'P7', name: 'GIMNÀSTIC SANT VICENT', zone: 'provincia', group: 'E' },
     { id: 'P8', name: 'MUTXAMEL CF', zone: 'provincia', group: 'F' }
@@ -52,7 +52,7 @@ const FALLBACK_ENROLLED_TEAMS = {
         "ALICANTE FOOTBALL ACADEMY",
         "SALESIANOS BY DICKENS",
         "CD CAMPELLO- CASA SALVI",
-        "CF BARRIO SAN GABRIEL",
+        "GAVIOTA CF B.º SAN GABRIEL",
         "CD VILLAFRANQUEZA",
         "BETIS FLORIDA",
         "C.A. EL PRINCIPIO",
@@ -65,14 +65,14 @@ const FALLBACK_ENROLLED_TEAMS = {
         "PENDIENTE/VACANTE"
     ],
     provincia: [
-        "JOVE ESPAÑOL SANT VICENT",
+        "CD ESPAÑOL SAN VICENTE",
         "GIMNÀSTIC SANT VICENT",
         "MONNEGRE MUCHAMIEL",
         "MUTXAMEL CF",
         "AC TORRELANO",
         "VILLAJOYOSA CF",
         "FUNDACIÓN CD CAMPELLO",
-        "ALTET CF"
+        "CD ALTET"
     ]
 };
 let isAdmin = false;

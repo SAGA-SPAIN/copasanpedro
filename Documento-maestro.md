@@ -63,7 +63,7 @@ El calendario se organiza de forma que se juegan **3 partidos diarios** en los d
   - Grupo C: C.A. El Principio vs Salesianos by Dickens (`C-R1-C8vC10`)
 - **Miércoles 3 de Junio:**
   - Grupo A: Playas Alicante vs Mediterráneo-Peña El Botijo (`A-R1-C15vC4`)
-  - Grupo B: CF Barrio San Gabriel vs CD Campello- Casa Salvi (`B-R1-C1vC14`)
+  - Grupo B: GAVIOTA CF B.º SAN GABRIEL vs CD Campello- Casa Salvi (`B-R1-C1vC14`)
   - Grupo D: Alicante Football Academy vs Lacross Babel (`D-R1-C3vC12`)
 - **Viernes 5 de Junio:**
   - Grupo A: Mediterráneo-Peña El Botijo vs SCD San Blas (`A-R2-C4vC7`)
@@ -71,7 +71,7 @@ El calendario se organiza de forma que se juegan **3 partidos diarios** en los d
   - Grupo C: CD Villafranqueza vs Alicante City FC Academy (`C-R1-C5vC16`) *(Nota: Alicante City comienza el 5 de junio).*
 - **Lunes 8 de Junio:**
   - Grupo A: Viasport Maristas vs Playas Alicante (`A-R2-C2vC15`)
-  - Grupo B: Alicante Sport Academy vs CF Barrio San Gabriel (`B-R2-C11vC1`)
+  - Grupo B: Alicante Sport Academy vs GAVIOTA CF B.º SAN GABRIEL (`B-R2-C11vC1`)
   - Grupo D: Atletico San Blas vs Betis Florida (`D-R1-C6vC13`)
 - **Miércoles 10 de Junio:**
   - Grupo C: Salesianos by Dickens vs CD Villafranqueza (`C-R2-C10vC5`)
@@ -84,7 +84,7 @@ El calendario se organiza de forma que se juegan **3 partidos diarios** en los d
 - **Miércoles 17 de Junio (Jornada 3 - Grupos A y B unificados):**
   - Grupo A: SCD San Blas vs Playas Alicante (`A-R3-C7vC15`)
   - Grupo A: Mediterráneo-Peña El Botijo vs Viasport Maristas (`A-R3-C4vC2`)
-  - Grupo B: CF Barrio San Gabriel vs Inter Leuka-Dual Link (`B-R3-C1vC9`)
+  - Grupo B: GAVIOTA CF B.º SAN GABRIEL vs Inter Leuka-Dual Link (`B-R3-C1vC9`)
   - Grupo B: CD Campello- Casa Salvi vs Alicante Sport Academy (`B-R3-C14vC11`) *(Nota: Swapped home/away to avoid venue overlap at Samarach).*
 - **Viernes 19 de Junio (Jornada 3 - Grupos C y D unificados):**
   - Grupo C: C.A. El Principio vs CD Villafranqueza (`C-R3-C8vC5`)
