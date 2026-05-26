@@ -363,7 +363,7 @@ function generateDefaultState() {
         "awayTeam": "C1",
         "homeScore": null,
         "awayScore": null,
-        "date": "2026-06-08",
+        "date": "2026-06-10",
         "time": "20:30",
         "venue": "Pol. J.A. Samarach",
         "status": "pending",

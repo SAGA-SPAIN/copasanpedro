@@ -71,9 +71,9 @@ El calendario se organiza de forma que se juegan **3 partidos diarios** en los d
   - Grupo C: CD Villafranqueza vs Alicante City FC Academy (`C-R1-C5vC16`) *(Nota: Alicante City comienza el 5 de junio).*
 - **Lunes 8 de Junio:**
   - Grupo A: Viasport Maristas vs Playas Alicante (`A-R2-C2vC15`)
-  - Grupo B: Alicante Sport Academy vs GAVIOTA CF B.º SAN GABRIEL (`B-R2-C11vC1`)
   - Grupo D: Atletico San Blas vs Betis Florida (`D-R1-C6vC13`)
 - **Miércoles 10 de Junio:**
+  - Grupo B: Alicante Sport Academy vs GAVIOTA CF B.º SAN GABRIEL (`B-R2-C11vC1`)
   - Grupo C: Salesianos by Dickens vs CD Villafranqueza (`C-R2-C10vC5`)
   - Grupo D: Lacross Babel vs Atletico San Blas (`D-R2-C12vC6`)
 - **Viernes 12 de Junio:**
