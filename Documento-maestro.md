@@ -66,17 +66,17 @@ El calendario se organiza de forma que se juegan **3 partidos diarios** en los d
   - Grupo B: GAVIOTA CF B.º SAN GABRIEL vs CD Campello- Casa Salvi (`B-R1-C1vC14`)
   - Grupo D: Alicante Football Academy vs Lacross Babel (`D-R1-C3vC12`)
 - **Viernes 5 de Junio:**
-  - Grupo A: Mediterráneo-Peña El Botijo vs SCD San Blas (`A-R2-C4vC7`)
   - Grupo C: CD Villafranqueza vs Alicante City FC Academy (`C-R1-C5vC16`) *(Nota: Alicante City comienza el 5 de junio).*
+  - Grupo D: ATH. San BLas - Automoviles Erique vs Betis Florida (`D-R1-C6vC13`) *(Nota: Movido desde el 8 Jun para garantizar descanso mínimo de C6).*
 - **Lunes 8 de Junio:**
-  - Grupo A: Viasport Maristas vs Playas Alicante (`A-R2-C2vC15`)
+  - Grupo A: Mediterráneo-Peña El Botijo vs SCD San Blas (`A-R2-C4vC7`) *(Nota: Movido desde el 5 Jun para garantizar descanso mínimo de C4).*
   - Grupo B: CD Campello- Casa Salvi vs Inter Leuka-Dual Link (`B-R2-C14vC9`)
-  - Grupo D: ATH. San BLas - Automoviles Erique vs Betis Florida (`D-R1-C6vC13`)
 - **Miércoles 10 de Junio:**
   - Grupo B: Alicante Sport Academy vs GAVIOTA CF B.º SAN GABRIEL (`B-R2-C11vC1`)
   - Grupo C: Salesianos by Dickens vs CD Villafranqueza (`C-R2-C10vC5`)
   - Grupo D: Lacross Babel vs ATH. San BLas - Automoviles Erique (`D-R2-C12vC6`)
 - **Viernes 12 de Junio:**
+  - Grupo A: Viasport Maristas vs Playas Alicante (`A-R2-C2vC15`) *(Nota: Movido desde el 8 Jun para reequilibrar la carga diaria).*
   - Grupo C: Alicante City FC Academy vs C.A. El Principio (`C-R2-C16vC8`)
   - Grupo D: Betis Florida vs Alicante Football Academy (`D-R2-C13vC3`)
   *(Nota: El lunes 15 de junio queda libre por parón del Mundial).*
