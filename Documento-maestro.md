@@ -67,10 +67,10 @@ El calendario se organiza de forma que se juegan **3 partidos diarios** en los d
   - Grupo D: Alicante Football Academy vs Lacross Babel (`D-R1-C3vC12`)
 - **Viernes 5 de Junio:**
   - Grupo A: Mediterráneo-Peña El Botijo vs SCD San Blas (`A-R2-C4vC7`)
-  - Grupo B: CD Campello- Casa Salvi vs Inter Leuka-Dual Link (`B-R2-C14vC9`)
   - Grupo C: CD Villafranqueza vs Alicante City FC Academy (`C-R1-C5vC16`) *(Nota: Alicante City comienza el 5 de junio).*
 - **Lunes 8 de Junio:**
   - Grupo A: Viasport Maristas vs Playas Alicante (`A-R2-C2vC15`)
+  - Grupo B: CD Campello- Casa Salvi vs Inter Leuka-Dual Link (`B-R2-C14vC9`)
   - Grupo D: Atletico San Blas vs Betis Florida (`D-R1-C6vC13`)
 - **Miércoles 10 de Junio:**
   - Grupo B: Alicante Sport Academy vs GAVIOTA CF B.º SAN GABRIEL (`B-R2-C11vC1`)

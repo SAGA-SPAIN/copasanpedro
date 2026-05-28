@@ -348,7 +348,7 @@ function generateDefaultState() {
         "awayTeam": "C9",
         "homeScore": null,
         "awayScore": null,
-        "date": "2026-06-05",
+        "date": "2026-06-08",
         "time": "20:30",
         "venue": "Pol. Pla Garbinet",
         "status": "pending",
