@@ -8,7 +8,7 @@ const INITIAL_TEAMS = [
     { id: 'C3', name: 'ALICANTE FOOTBALL ACADEMY', zone: 'capital', group: 'D' },
     { id: 'C4', name: 'MEDITERRÁNEO-PEÑA EL BOTIJO', zone: 'capital', group: 'A' },
     { id: 'C5', name: 'CD VILLAFRANQUEZA', zone: 'capital', group: 'C' },
-    { id: 'C6', name: 'ATLETICO SAN BLAS', zone: 'capital', group: 'D' },
+    { id: 'C6', name: 'ATH. SAN BLAS - AUTOMOVILES ERIQUE', zone: 'capital', group: 'D' },
     { id: 'C7', name: 'SCD SAN BLAS', zone: 'capital', group: 'A' },
     { id: 'C8', name: 'C.A. EL PRINCIPIO', zone: 'capital', group: 'C' },
     { id: 'C9', name: 'INTER LEUKA-DUAL LINK', zone: 'capital', group: 'B' },
@@ -61,7 +61,7 @@ const FALLBACK_ENROLLED_TEAMS = {
         "PLAYAS ALICANTE",
         "MEDITERRÁNEO-PEÑA EL BOTIJO",
         "ALICANTE SPORT ACADEMY",
-        "ATLETICO SAN BLAS",
+        "ATH. SAN BLAS - AUTOMOVILES ERIQUE",
         "PENDIENTE/VACANTE"
     ],
     provincia: [

@@ -104,7 +104,7 @@ function generateDefaultState() {
   },
   {
     "id": "C6",
-    "name": "ATLETICO SAN BLAS",
+    "name": "ATH. SAN BLAS - AUTOMOVILES ERIQUE",
     "zone": "capital",
     "group": "D"
   },

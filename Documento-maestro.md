@@ -71,11 +71,11 @@ El calendario se organiza de forma que se juegan **3 partidos diarios** en los d
 - **Lunes 8 de Junio:**
   - Grupo A: Viasport Maristas vs Playas Alicante (`A-R2-C2vC15`)
   - Grupo B: CD Campello- Casa Salvi vs Inter Leuka-Dual Link (`B-R2-C14vC9`)
-  - Grupo D: Atletico San Blas vs Betis Florida (`D-R1-C6vC13`)
+  - Grupo D: ATH. San BLas - Automoviles Erique vs Betis Florida (`D-R1-C6vC13`)
 - **Miércoles 10 de Junio:**
   - Grupo B: Alicante Sport Academy vs GAVIOTA CF B.º SAN GABRIEL (`B-R2-C11vC1`)
   - Grupo C: Salesianos by Dickens vs CD Villafranqueza (`C-R2-C10vC5`)
-  - Grupo D: Lacross Babel vs Atletico San Blas (`D-R2-C12vC6`)
+  - Grupo D: Lacross Babel vs ATH. San BLas - Automoviles Erique (`D-R2-C12vC6`)
 - **Viernes 12 de Junio:**
   - Grupo C: Alicante City FC Academy vs C.A. El Principio (`C-R2-C16vC8`)
   - Grupo D: Betis Florida vs Alicante Football Academy (`D-R2-C13vC3`)
@@ -89,7 +89,7 @@ El calendario se organiza de forma que se juegan **3 partidos diarios** en los d
 - **Viernes 19 de Junio (Jornada 3 - Grupos C y D unificados):**
   - Grupo C: C.A. El Principio vs CD Villafranqueza (`C-R3-C8vC5`)
   - Grupo C: Alicante City FC Academy vs Salesianos by Dickens (`C-R3-C16vC10`)
-  - Grupo D: Alicante Football Academy vs Atletico San Blas (`D-R3-C3vC6`)
+  - Grupo D: Alicante Football Academy vs ATH. San BLas - Automoviles Erique (`D-R3-C3vC6`)
   - Grupo D: Betis Florida vs Lacross Babel (`D-R3-C13vC12`)
 
 ### Fase Provincia (Martes, Jueves - 20:00, partidos de local de Monnegre a las 21:00)
